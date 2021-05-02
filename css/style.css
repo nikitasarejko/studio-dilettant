@@ -16,7 +16,7 @@ div#nav-toggle p {
 div#about-toggle p {
   font-size: 1.424rem;
   line-height: 1;
-  color: #1d3135;
+  color: #001d19;
   transform: rotate(90deg);
   text-transform: uppercase;
 }
@@ -39,12 +39,12 @@ section.about div.about__container p {
   font-size: clamp(1.802rem, 1.602vw, 3.247rem);
   letter-spacing: -0.011em;
   line-height: 1.35;
-  color: #1d3135;
+  color: #001d19;
 }
 section.about div.about__container div.intro-portrait figure figcaption p {
   font-size: 1.125rem;
   letter-spacing: -0.011em;
-  color: #1d3135;
+  color: #001d19;
   text-transform: uppercase;
   letter-spacing: 0.025rem;
 }
@@ -59,7 +59,7 @@ section.about div.about__container div.intro-contact div.intro-contact__row p {
 section.about div.about__container div.intro-contact div.intro-contact__row a {
   font-size: clamp(1.802rem, 1.424vw, 2.566rem);
   letter-spacing: -0.011em;
-  color: #1d3135;
+  color: #001d19;
 }
 section.about div.about__container div.intro-contact div.intro-contact__row a:hover {
   text-decoration: none;
@@ -74,7 +74,7 @@ section.home-hero div.home-content__copy h2 {
   font-weight: 300;
   letter-spacing: -0.011em;
   text-transform: uppercase;
-  color: #1d3135;
+  color: #001d19;
 }
 section.home-hero div.home-content__copy h2 span.static {
   display: block;
@@ -177,7 +177,7 @@ div#nav-toggle {
   height: 100vh;
   padding-top: 4rem;
   width: 4.8rem;
-  background-color: #1d3135;
+  background-color: #001d19;
   cursor: pointer;
   transition: transform 0.5s linear;
   z-index: 778;
@@ -207,7 +207,7 @@ section.nav {
   top: 0;
   left: 0;
   padding: 8rem;
-  background-color: #1d3135;
+  background-color: #001d19;
   width: 66.666vw;
   min-height: 100vh;
   overflow-y: scroll;
@@ -352,7 +352,7 @@ section.home-hero div.home-content {
   height: 100%;
   padding: 4rem 0;
   background-color: white;
-  border-top: 1px solid #1d3135;
+  border-top: 1px solid #001d19;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -377,7 +377,7 @@ section.services div.services__column {
   width: 50%;
   padding-left: 0rem;
   display: flex;
-  border-right: 1px solid #1d3135;
+  border-right: 1px solid #001d19;
 }
 section.services div.services__column:last-of-type {
   padding-left: 8rem;
@@ -494,7 +494,7 @@ footer {
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
   padding: 4rem;
-  background-color: #1d3135;
+  background-color: #001d19;
   color: #eff1e2;
   display: flex;
 }
@@ -542,7 +542,7 @@ html {
 
 body {
   background: white;
-  color: #1d3135;
+  color: #001d19;
 }
 body.body-locked {
   position: relative;
