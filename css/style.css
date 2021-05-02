@@ -1,0 +1,550 @@
+@import url("https://rsms.me/inter/inter.css");
+body {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.011em;
+}
+
+div#nav-toggle p {
+  font-size: 1.424rem;
+  line-height: 1;
+  color: #eff1e2;
+  transform: rotate(90deg);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+div#about-toggle p {
+  font-size: 1.424rem;
+  line-height: 1;
+  color: #1d3135;
+  transform: rotate(90deg);
+  text-transform: uppercase;
+}
+
+section.nav h4.title {
+  font-size: 2.281rem;
+  line-height: 1;
+  letter-spacing: -0.011em;
+  color: #eff1e2;
+  text-transform: uppercase;
+}
+section.nav figure figcaption p {
+  font-size: 1.125rem;
+  letter-spacing: 0.025rem;
+  color: #eff1e2;
+  text-transform: uppercase;
+}
+
+section.about div.about__container p {
+  font-size: clamp(1.802rem, 1.602vw, 3.247rem);
+  letter-spacing: -0.011em;
+  line-height: 1.35;
+  color: #1d3135;
+}
+section.about div.about__container div.intro-portrait figure figcaption p {
+  font-size: 1.125rem;
+  letter-spacing: -0.011em;
+  color: #1d3135;
+  text-transform: uppercase;
+  letter-spacing: 0.025rem;
+}
+section.about div.about__container div.intro-contact p.intro-contact__headline {
+  font-size: clamp(1.802rem, 1.424vw, 2.566rem);
+  letter-spacing: -0.011em;
+}
+section.about div.about__container div.intro-contact div.intro-contact__row p {
+  font-size: clamp(1.802rem, 1.424vw, 2.566rem);
+  letter-spacing: -0.011em;
+}
+section.about div.about__container div.intro-contact div.intro-contact__row a {
+  font-size: clamp(1.802rem, 1.424vw, 2.566rem);
+  letter-spacing: -0.011em;
+  color: #1d3135;
+}
+section.about div.about__container div.intro-contact div.intro-contact__row a:hover {
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+section.home-hero div.home-content__copy {
+  max-width: 80rem;
+}
+section.home-hero div.home-content__copy h2 {
+  font-size: clamp(1.802rem, 5vw, 9.373rem);
+  font-weight: 300;
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+  color: #1d3135;
+}
+section.home-hero div.home-content__copy h2 span.static {
+  display: block;
+}
+section.home-hero div.home-content__copy h2 span.flexible {
+  letter-spacing: -0.022em;
+}
+section.home-hero div.home-content__copy p {
+  font-size: clamp(1.602rem, 2.4vw, 2.887rem);
+  letter-spacing: -0.011em;
+  margin-top: 6.4rem;
+}
+
+section.services div.services__column div.services__headline h5 {
+  font-size: clamp(1.602rem, 1.8vw, 1.802rem);
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+}
+section.services div.services__column div.services__row p {
+  font-size: clamp(2.281rem, 2.4vw, 4.624rem);
+  letter-spacing: -0.011em;
+}
+
+section.featured div.featured__headline h5 {
+  font-size: clamp(1.602rem, 1.8vw, 1.802rem);
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+}
+section.featured div.featured__case__img figure figcaption {
+  color: #eff1e2;
+  font-size: 1.266rem;
+  font-weight: 500;
+  letter-spacing: 0.011em;
+  text-transform: uppercase;
+}
+section.featured div.featured__case__info__row h6 {
+  font-size: clamp(2.027rem, 2.1vw, 3.247rem);
+  letter-spacing: -0.011em;
+}
+section.featured div.featured__case__info__row p {
+  font-size: clamp(1.602rem, 1.6vw, 2.027rem);
+  letter-spacing: -0.011em;
+  line-height: 1.35;
+}
+section.featured div.featured__case__info__row p.facts {
+  font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+section.featured div.featured__case__facts__row h6 {
+  font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+section.featured div.featured__case__facts__content p {
+  font-size: clamp(2.027rem, 2.1vw, 3.247rem);
+  letter-spacing: -0.011em;
+}
+
+section.clients div.clients__headline h5 {
+  font-size: clamp(1.602rem, 1.8vw, 1.802rem);
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+}
+section.clients div.clients__left__copy p {
+  font-size: clamp(1.602rem, 1.6vw, 2.027rem);
+  letter-spacing: -0.011em;
+  line-height: 1.35;
+}
+
+footer {
+  text-align: center;
+}
+footer div.footer__top h6 {
+  font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+  letter-spacing: -0.011em;
+}
+footer div.footer__paragraph p {
+  font-size: clamp(2.566rem, 5vw, 9.373rem);
+  line-height: 1.075;
+  letter-spacing: -0.011em;
+  font-weight: 300;
+}
+footer div.footer__links a {
+  text-decoration: none;
+  font-size: clamp(1.802rem, 3.2vw, 4.624rem);
+  letter-spacing: -0.011em;
+  font-weight: 300;
+  color: #eff1e2;
+  transition: opacity 0.3s ease;
+}
+footer div.footer__links a:hover {
+  opacity: 0.4;
+}
+
+div#nav-toggle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding-top: 4rem;
+  width: 4.8rem;
+  background-color: #1d3135;
+  cursor: pointer;
+  transition: transform 0.5s linear;
+  z-index: 778;
+}
+div#nav-toggle.active {
+  transform: translateX(66.666vw);
+}
+
+div#about-toggle {
+  position: fixed;
+  top: 0;
+  left: 4.8rem;
+  height: 100vh;
+  width: 4.8rem;
+  padding-top: 4rem;
+  background-color: #eff1e2;
+  cursor: pointer;
+  transition: transform 0.5s linear;
+  z-index: 666;
+}
+div#about-toggle.active {
+  transform: translateX(66.666vw);
+}
+
+section.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 8rem;
+  background-color: #1d3135;
+  width: 66.666vw;
+  min-height: 100vh;
+  overflow-y: scroll;
+  transition: transform 0.5s linear;
+  z-index: 777;
+  transform: translateX(-100%);
+}
+section.nav.active {
+  transform: translateX(0%);
+}
+section.nav div.nav__titlewrapper {
+  height: 100%;
+  overflow: hidden;
+}
+section.nav div.nav__titlewrapper h4 {
+  width: 100%;
+  display: inline-block;
+  transform: translateY(101%);
+}
+section.nav div.nav__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.6rem;
+}
+section.nav div.nav__grid figure {
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+section.nav div.nav__grid figure figcaption {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 2.4rem;
+}
+
+section.about {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 66.666vw;
+  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+  background-color: #eff1e2;
+  transition: transform 0.5s linear;
+  z-index: 666;
+  transform: translateX(-100%);
+}
+section.about.active {
+  transform: translateX(4.8rem);
+}
+section.about div.about__container {
+  width: 100%;
+  height: 100%;
+  padding: 8rem;
+  overflow-y: scroll;
+}
+section.about div.about__container::-webkit-scrollbar {
+  display: none;
+}
+section.about div.about__container div.intro-text__wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+section.about div.about__container div.intro-text p {
+  margin-bottom: 1.6rem;
+}
+section.about div.about__container div.intro-portrait {
+  width: 50%;
+  margin-top: 4rem;
+}
+section.about div.about__container div.intro-portrait figure {
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+section.about div.about__container div.intro-portrait figure figcaption p {
+  margin-top: 1.6rem;
+}
+section.about div.about__container div.intro-contact {
+  padding-top: 8rem;
+}
+section.about div.about__container div.intro-contact__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 4rem;
+}
+section.about div.about__container div.intro-contact div.intro-contact__row {
+  padding-bottom: 2.4rem;
+}
+section.about div.about__container div.intro-contact div.intro-contact__row a {
+  display: inline-block;
+}
+
+div.dimmed {
+  background-color: #d8ddd3;
+  opacity: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+div.mini-logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding: 1.6rem 0rem;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+}
+div.mini-logo img {
+  height: 2.4rem;
+}
+
+section.home-hero {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding: 4rem;
+}
+section.home-hero div.home-logo {
+  width: 100%;
+}
+section.home-hero div.home-logo svg {
+  width: 50%;
+  padding-bottom: 4rem;
+  margin: 0 auto;
+}
+section.home-hero div.home-content {
+  height: 100%;
+  padding: 4rem 0;
+  background-color: white;
+  border-top: 1px solid #1d3135;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 1;
+  position: relative;
+}
+section.home-hero div.home-content__copy h2 span.flexible {
+  display: inline-block;
+}
+section.home-hero div.home-content__img img {
+  height: 66.666vh;
+  object-fit: cover;
+}
+
+section.services {
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding: 12rem 4rem;
+  display: flex;
+}
+section.services div.services__column {
+  width: 50%;
+  padding-left: 0rem;
+  display: flex;
+  border-right: 1px solid #1d3135;
+}
+section.services div.services__column:last-of-type {
+  padding-left: 8rem;
+  border-right: none;
+}
+section.services div.services__column--left {
+  width: 25%;
+}
+section.services div.services__column--right {
+  width: 75%;
+}
+section.services div.services__column div.services__headline {
+  margin-top: 2.4rem;
+  overflow: hidden;
+}
+section.services div.services__column div.services__row {
+  padding: 1.6rem 0rem;
+}
+
+section.featured {
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding: 12rem 4rem;
+}
+section.featured div.featured__headline {
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+section.featured div.featured__case {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-column-gap: 2.4rem;
+}
+section.featured div.featured__case__img figure:hover {
+  cursor: none;
+}
+section.featured div.featured__case__img figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 1s ease;
+  pointer-events: none;
+  display: inline-block;
+  mix-blend-mode: difference;
+  will-change: top, left;
+}
+section.featured div.featured__case__img figure figcaption::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  background-color: #d8ddd3;
+  margin-right: 1rem;
+}
+section.featured div.featured__case__img figure figcaption.show {
+  opacity: 1;
+}
+section.featured div.featured__case__info__row {
+  margin-bottom: 2.4rem;
+}
+section.featured div.featured__case__facts__headline {
+  margin-bottom: 1.6rem;
+}
+section.featured div.featured__case__facts__row {
+  margin-bottom: 4rem;
+}
+
+section.clients {
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding: 12rem 4rem;
+}
+section.clients div.clients__headline {
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+section.clients div.clients__content {
+  display: flex;
+}
+section.clients div.clients__left {
+  width: 25%;
+}
+section.clients div.clients__right {
+  width: 75%;
+}
+section.clients div.clients__right__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.6rem;
+  justify-items: center;
+}
+section.clients div.clients__right__grid img {
+  max-width: 12rem;
+  filter: grayscale(1);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 66.667vh;
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding: 4rem;
+  background-color: #1d3135;
+  color: #eff1e2;
+  display: flex;
+}
+footer div.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+footer div.footer__top {
+  margin-top: 4rem;
+}
+footer div.footer__center {
+  max-width: 160rem;
+}
+footer div.footer__links {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+footer div.footer__links a {
+  margin-bottom: 0.8rem;
+}
+footer div.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: white;
+  color: #1d3135;
+}
+body.body-locked {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  margin-bottom: 66.666vh;
+}
+
+/*# sourceMappingURL=style.css.map */

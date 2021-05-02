@@ -1,0 +1,34 @@
+@import "variables", "typography", "toggle", "layout";
+
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: white;
+  color: $dark-green;
+
+  &.body-locked {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  margin-bottom: 66.666vh;
+}

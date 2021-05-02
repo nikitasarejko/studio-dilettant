@@ -1,0 +1,169 @@
+div#nav-toggle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding-top: 4rem;
+  width: 4.8rem;
+  background-color: $dark-green;
+  cursor: pointer;
+  transition: transform 0.5s linear;
+
+  z-index: 778;
+
+  &.active {
+    transform: translateX(66.666vw);
+  }
+}
+
+div#about-toggle {
+  position: fixed;
+  top: 0;
+  left: 4.8rem;
+  height: 100vh;
+  width: 4.8rem;
+  padding-top: 4rem;
+  background-color: $light-green;
+  cursor: pointer;
+  transition: transform 0.5s linear;
+
+  z-index: 666;
+
+  &.active {
+    transform: translateX(66.666vw);
+  }
+}
+
+section.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 8rem;
+  background-color: $dark-green;
+  width: 66.666vw;
+  min-height: 100vh;
+  overflow-y: scroll;
+  transition: transform 0.5s linear;
+
+  z-index: 777;
+  transform: translateX(-100%);
+
+  &.active {
+    transform: translateX(0%);
+  }
+
+  div.nav__titlewrapper {
+    height: 100%;
+    overflow: hidden;
+
+    h4 {
+      width: 100%;
+      display: inline-block;
+      transform: translateY(101%);
+    }
+  }
+
+  div.nav__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.6rem;
+
+    figure {
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+
+      figcaption {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-top: 2.4rem;
+      }
+    }
+  }
+}
+
+section.about {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 66.666vw;
+  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+  background-color: $light-green;
+  transition: transform 0.5s linear;
+
+  z-index: 666;
+  transform: translateX(-100%);
+
+  &.active {
+    transform: translateX(4.8rem);
+  }
+
+  div.about__container {
+    width: 100%;
+    height: 100%;
+    padding: 8rem;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    div.intro-text {
+      &__wrapper {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      p {
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    div.intro-portrait {
+      width: 50%;
+      margin-top: 4rem;
+
+      figure {
+        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+
+        figcaption {
+          p {
+            margin-top: 1.6rem;
+          }
+        }
+      }
+    }
+
+    div.intro-contact {
+      padding-top: 8rem;
+
+      &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 4rem;
+      }
+
+      div.intro-contact__row {
+        padding-bottom: 2.4rem;
+
+        & a {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+div.dimmed {
+  background-color: $medium-green;
+  opacity: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
