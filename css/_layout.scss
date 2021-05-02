@@ -125,9 +125,20 @@ section.featured {
 
       &__img {
         figure {
+          overflow: hidden;
+
           &:hover {
             cursor: none;
+
+            img {
+              transform: scale(1.025);
+            }
           }
+
+          img {
+            transition: transform 0.3s ease-in-out;
+          }
+
           figcaption {
             position: absolute;
             top: 0;

@@ -310,6 +310,7 @@ div.dimmed {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 2;
 }
 
 div.mini-logo {
@@ -410,8 +411,17 @@ section.featured div.featured__case {
   grid-template-columns: 1fr 2fr 1fr;
   grid-column-gap: 2.4rem;
 }
+section.featured div.featured__case__img figure {
+  overflow: hidden;
+}
 section.featured div.featured__case__img figure:hover {
   cursor: none;
+}
+section.featured div.featured__case__img figure:hover img {
+  transform: scale(1.025);
+}
+section.featured div.featured__case__img figure img {
+  transition: transform 0.3s ease-in-out;
 }
 section.featured div.featured__case__img figure figcaption {
   position: absolute;
