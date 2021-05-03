@@ -1,4 +1,4 @@
-@import "variables", "typography", "toggle", "layout";
+@import "variables", "typography", "toggle", "main-layout", "case-layout";
 
 @import url("https://rsms.me/inter/inter.css");
 html {
@@ -13,6 +13,11 @@ html {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  &.is-transitioning {
+    pointer-events: none;
+    cursor: progress;
+  }
 }
 
 body {
