@@ -298,14 +298,33 @@ function runInit() {
         ease: "power4.easeOut",
       },
       scrollTrigger: {
-        trigger: ".home-hero",
+        trigger: "#hero",
         start: "center top",
         toggleActions: "play none none reverse",
-        markers: true,
       },
     });
 
     logoSmallTl.to(logo, { y: 0 });
+  };
+
+  const caseHeroImgScroll = function () {
+    const caseHeroImg = document.querySelector(
+      "div.case-hero__right figure img"
+    );
+
+    const caseHeroImgTl = new gsap.timeline({
+      defaults: {
+        ease: "power4.easeOut",
+      },
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        toggleActions: "play none none reverse",
+        scrub: true,
+      },
+    });
+
+    caseHeroImgTl.to(caseHeroImg, { yPercent: 25, scale: 1.05 });
   };
 
   // RUN FUNCTIONS
@@ -314,6 +333,7 @@ function runInit() {
   footerReveal();
   logoLargeScroll();
   logoSmallScroll();
+  caseHeroImgScroll();
 
   // EVENTLISTENER
   navToggle.addEventListener("click", openNav);
@@ -404,7 +424,7 @@ barba.init({
     },
     {
       namespace: "case",
-      beforeEnter() {
+      afterEnter() {
         console.log("LOGO SCROLL FUNCTION STARTED");
         console.log("FOOTER REVEAL FUNCTION STARTED");
         console.log("WHY IS EVERYTHING BROKEN?");

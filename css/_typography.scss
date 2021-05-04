@@ -236,6 +236,76 @@ section.clients {
   }
 }
 
+section.case-hero {
+  div.case-hero {
+    &__left {
+      &__link {
+        a {
+          text-decoration: none;
+          color: $dark-green;
+          font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+          letter-spacing: -0.011em;
+        }
+      }
+
+      &__headline {
+        h1 {
+          font-size: clamp(1.802rem, 4vw, 7.406rem);
+          font-weight: 300;
+          line-height: 1.05;
+          letter-spacing: -0.011em;
+          color: $dark-green;
+        }
+      }
+
+      &__label {
+        p {
+          font-size: 1.266rem;
+          letter-spacing: -0.011em;
+          font-weight: 500;
+          text-transform: uppercase;
+
+          &::before {
+            content: "";
+            width: 1rem;
+            height: 1rem;
+            background-color: $dark-green;
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+          }
+        }
+      }
+
+      &__copy {
+        p {
+          font-size: clamp(1.602rem, 1.6vw, 2.027rem);
+          letter-spacing: -0.011em;
+          line-height: 1.35;
+        }
+      }
+    }
+  }
+}
+
+section.quote {
+  div.quote {
+    &__wrapper {
+      h3 {
+        font-size: clamp(2.281rem, 2.4vw, 4.624rem);
+        letter-spacing: -0.011em;
+        text-align: center;
+      }
+    }
+
+    &__info {
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
 footer {
   text-align: center;
 
