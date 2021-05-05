@@ -96,13 +96,12 @@ section.services {
     }
 
     div.services__headline {
-      margin-top: 2.4rem;
+      margin-top: clamp(0.4rem, 0.8vw, 2.4rem);
       overflow: hidden;
     }
 
     div.services__row {
-      // border-bottom: 1px solid $dark-green;
-      padding: 1.6rem 0rem;
+      padding: clamp(0.4rem, 0.6vw, 1.6rem) 0rem;
     }
   }
 }

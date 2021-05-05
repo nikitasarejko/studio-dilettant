@@ -67,10 +67,10 @@ section.about div.about__container div.intro-contact div.intro-contact__row a:ho
 }
 
 section.home-hero div.home-content__copy {
-  max-width: 80rem;
+  max-width: 50%;
 }
 section.home-hero div.home-content__copy h2 {
-  font-size: clamp(1.802rem, 5vw, 9.373rem);
+  font-size: clamp(1.802rem, 4vw, 9.373rem);
   font-weight: 300;
   letter-spacing: -0.011em;
   text-transform: uppercase;
@@ -83,9 +83,9 @@ section.home-hero div.home-content__copy h2 span.flexible {
   letter-spacing: -0.022em;
 }
 section.home-hero div.home-content__copy p {
-  font-size: clamp(1.602rem, 2.4vw, 2.887rem);
+  font-size: clamp(1.424rem, 1.6vw, 2.887rem);
   letter-spacing: -0.011em;
-  margin-top: 6.4rem;
+  margin-top: clamp(0.8rem, 2.4vw, 6.4rem);
 }
 
 section.services div.services__column div.services__headline h5 {
@@ -94,7 +94,7 @@ section.services div.services__column div.services__headline h5 {
   text-transform: uppercase;
 }
 section.services div.services__column div.services__row p {
-  font-size: clamp(2.281rem, 2.4vw, 4.624rem);
+  font-size: clamp(2.027rem, 1.8vw, 4.624rem);
   letter-spacing: -0.011em;
 }
 
@@ -111,11 +111,12 @@ section.featured div.featured__case__img figure figcaption {
   text-transform: uppercase;
 }
 section.featured div.featured__case__info__row h6 {
-  font-size: clamp(2.027rem, 2.1vw, 3.247rem);
+  font-size: clamp(2.027rem, 1.8vw, 3.247rem);
   letter-spacing: -0.011em;
+  line-height: 1.15;
 }
 section.featured div.featured__case__info__row p {
-  font-size: clamp(1.602rem, 1.6vw, 2.027rem);
+  font-size: clamp(1.602rem, 1.2vw, 2.027rem);
   letter-spacing: -0.011em;
   line-height: 1.35;
 }
@@ -130,8 +131,9 @@ section.featured div.featured__case__facts__row h6 {
   text-transform: uppercase;
 }
 section.featured div.featured__case__facts__content p {
-  font-size: clamp(2.027rem, 2.1vw, 3.247rem);
+  font-size: clamp(2.027rem, 1.2vw, 3.247rem);
   letter-spacing: -0.011em;
+  margin-bottom: 0.8rem;
 }
 
 section.clients div.clients__headline h5 {
@@ -148,13 +150,13 @@ section.clients div.clients__left__copy p {
 section.case-hero div.case-hero__left__link a {
   text-decoration: none;
   color: #001d19;
-  font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+  font-size: clamp(1.266rem, 1vw, 1.602rem);
   letter-spacing: -0.011em;
 }
 section.case-hero div.case-hero__left__headline h1 {
-  font-size: clamp(1.802rem, 4vw, 7.406rem);
+  font-size: clamp(1.802rem, 3vw, 7.406rem);
   font-weight: 300;
-  line-height: 1.05;
+  line-height: 1.125;
   letter-spacing: -0.011em;
   color: #001d19;
 }
@@ -174,13 +176,15 @@ section.case-hero div.case-hero__left__label p::before {
   display: inline-block;
 }
 section.case-hero div.case-hero__left__copy p {
-  font-size: clamp(1.602rem, 1.6vw, 2.027rem);
+  font-size: clamp(1.602rem, 1.25vw, 2.027rem);
   letter-spacing: -0.011em;
   line-height: 1.35;
 }
 
 section.quote div.quote__wrapper h3 {
-  font-size: clamp(2.281rem, 2.4vw, 4.624rem);
+  font-size: clamp(2.281rem, 2vw, 4.624rem);
+  font-weight: 300;
+  line-height: 1.125;
   letter-spacing: -0.011em;
   text-align: center;
 }
@@ -196,14 +200,14 @@ footer div.footer__top h6 {
   letter-spacing: -0.011em;
 }
 footer div.footer__paragraph p {
-  font-size: clamp(2.566rem, 5vw, 9.373rem);
+  font-size: clamp(2.566rem, 4vw, 9.373rem);
   line-height: 1.075;
   letter-spacing: -0.011em;
   font-weight: 300;
 }
 footer div.footer__links a {
   text-decoration: none;
-  font-size: clamp(1.802rem, 3.2vw, 4.624rem);
+  font-size: clamp(1.802rem, 2.7vw, 4.624rem);
   letter-spacing: -0.011em;
   font-weight: 300;
   color: #eff1e2;
@@ -433,11 +437,11 @@ section.services div.services__column--right {
   width: 75%;
 }
 section.services div.services__column div.services__headline {
-  margin-top: 2.4rem;
+  margin-top: clamp(0.4rem, 0.8vw, 2.4rem);
   overflow: hidden;
 }
 section.services div.services__column div.services__row {
-  padding: 1.6rem 0rem;
+  padding: clamp(0.4rem, 0.6vw, 1.6rem) 0rem;
 }
 
 section.featured {
@@ -609,13 +613,13 @@ section.case-hero div.case-hero__left__inner {
 }
 section.case-hero div.case-hero__left__link {
   padding-bottom: 2.4rem;
-  border-bottom: 1px solid #001d19;
 }
 section.case-hero div.case-hero__left__content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  margin-top: 1.6rem;
 }
 section.case-hero div.case-hero__left__headline {
   max-width: 80rem;
@@ -641,10 +645,10 @@ section.case-hero div.case-hero__right figure img {
 }
 
 section.quote {
-  background-color: #d8ddd3;
-  border: 1px solid #001d19;
-  margin: 24rem auto;
-  width: 66.666%;
+  background-color: white;
+  border: 1px solid #d8ddd3;
+  margin: 16rem 16rem 16rem calc(16rem + 4.8rem);
+  width: 75%;
   display: flex;
   justify-content: space-between;
 }
@@ -653,11 +657,13 @@ section.quote div.quote__inner {
   height: 100%;
   padding: 8rem;
 }
+section.quote div.quote__info {
+  margin-bottom: 8rem;
+}
 section.quote div.quote__wrapper {
   overflow: hidden;
   height: 100%;
   max-width: 120rem;
-  padding: 8rem;
   margin: 0 auto;
 }
 
