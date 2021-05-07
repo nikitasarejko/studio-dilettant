@@ -7,10 +7,16 @@ div#nav-toggle {
   p {
     font-size: 1.424rem;
     line-height: 1;
-    color: $light-green;
+    color: $black;
     transform: rotate(90deg);
     text-transform: uppercase;
     pointer-events: none;
+  }
+
+  &:hover {
+    p {
+      color: $grey-regular;
+    }
   }
 }
 
@@ -18,9 +24,15 @@ div#about-toggle {
   p {
     font-size: 1.424rem;
     line-height: 1;
-    color: $dark-green;
+    color: $black;
     transform: rotate(90deg);
     text-transform: uppercase;
+  }
+
+  &:hover {
+    p {
+      color: $grey-regular;
+    }
   }
 }
 
@@ -30,7 +42,7 @@ section.nav {
       font-size: 2.281rem;
       line-height: 1;
       letter-spacing: -0.011em;
-      color: $light-green;
+      color: $black;
       text-transform: uppercase;
     }
   }
@@ -40,7 +52,7 @@ section.nav {
       p {
         font-size: 1.125rem;
         letter-spacing: 0.025rem;
-        color: $light-green;
+        color: $black;
         text-transform: uppercase;
       }
     }
@@ -53,7 +65,7 @@ section.about {
       font-size: clamp(1.802rem, 1.602vw, 3.247rem);
       letter-spacing: -0.011em;
       line-height: 1.35;
-      color: $dark-green;
+      color: $black;
     }
 
     div.intro-portrait {
@@ -62,7 +74,7 @@ section.about {
           p {
             font-size: 1.125rem;
             letter-spacing: -0.011em;
-            color: $dark-green;
+            color: $black;
             text-transform: uppercase;
             letter-spacing: 0.025rem;
           }
@@ -87,7 +99,7 @@ section.about {
         a {
           font-size: clamp(1.802rem, 1.424vw, 2.566rem);
           letter-spacing: -0.011em;
-          color: $dark-green;
+          color: $black;
 
           &:hover {
             text-decoration: none;
@@ -109,7 +121,7 @@ section.home-hero {
         font-weight: 300;
         letter-spacing: -0.011em;
         text-transform: uppercase;
-        color: $dark-green;
+        color: $black;
 
         span {
           &.static {
@@ -131,20 +143,43 @@ section.home-hero {
   }
 }
 
-section.services {
-  div.services__column {
-    div.services__headline {
+section.capabilities {
+  div.capabilities {
+    &__headline {
       h5 {
-        font-size: clamp(1.602rem, 1.8vw, 1.802rem);
-        letter-spacing: -0.011em;
+        color: $black;
+        font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+        font-weight: 500;
+        letter-spacing: 0.02rem;
+        opacity: 0.7;
         text-transform: uppercase;
       }
     }
 
-    div.services__row {
+    &__row {
       p {
-        font-size: clamp(2.027rem, 1.8vw, 4.624rem);
+        position: relative;
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: $black;
+        font-size: clamp(1.802rem, 2.4vw, 9.373rem);
+        line-height: 168%;
+        font-weight: 300;
         letter-spacing: -0.011em;
+
+        span {
+          position: absolute;
+          left: -3.2rem;
+          top: 27%;
+          right: auto;
+          bottom: auto;
+          font-size: 1.2rem;
+          line-height: 100%;
+          font-weight: 400;
+          letter-spacing: -0.011em;
+          text-transform: uppercase;
+        }
       }
     }
   }
@@ -152,15 +187,20 @@ section.services {
 
 section.featured {
   div.featured {
-    &__headline {
-      h5 {
-        font-size: clamp(1.602rem, 1.8vw, 1.802rem);
-        letter-spacing: -0.011em;
-        text-transform: uppercase;
-      }
-    }
-
     &__case {
+      &__info {
+        &__title {
+          h5 {
+            font-size: clamp(1.802rem, 1.8vw, 5.852rem);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: -0.011em;
+            line-height: 0.95;
+            color: $black;
+          }
+        }
+      }
+
       &__img {
         figure {
           figcaption {
@@ -172,46 +212,6 @@ section.featured {
           }
         }
       }
-
-      &__info {
-        &__row {
-          h6 {
-            font-size: clamp(2.027rem, 1.8vw, 3.247rem);
-            letter-spacing: -0.011em;
-            line-height: 1.15;
-          }
-
-          p {
-            font-size: clamp(1.602rem, 1.2vw, 2.027rem);
-            letter-spacing: -0.011em;
-            line-height: 1.35;
-
-            &.facts {
-              font-size: clamp(1.266rem, 1.25vw, 1.602rem);
-              font-weight: 500;
-              text-transform: uppercase;
-            }
-          }
-        }
-      }
-
-      &__facts {
-        &__row {
-          h6 {
-            font-size: clamp(1.266rem, 1.25vw, 1.602rem);
-            font-weight: 500;
-            text-transform: uppercase;
-          }
-        }
-
-        &__content {
-          p {
-            font-size: clamp(2.027rem, 1.2vw, 3.247rem);
-            letter-spacing: -0.011em;
-            margin-bottom: 0.8rem;
-          }
-        }
-      }
     }
   }
 }
@@ -219,8 +219,11 @@ section.featured {
 section.clients {
   div.clients__headline {
     h5 {
-      font-size: clamp(1.602rem, 1.8vw, 1.802rem);
-      letter-spacing: -0.011em;
+      color: $black;
+      font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+      font-weight: 500;
+      letter-spacing: 0.02rem;
+      opacity: 0.7;
       text-transform: uppercase;
     }
   }
@@ -244,7 +247,7 @@ section.case-hero {
       &__link {
         a {
           text-decoration: none;
-          color: $dark-green;
+          color: $black;
           font-size: clamp(1.266rem, 1vw, 1.602rem);
           letter-spacing: -0.011em;
         }
@@ -256,7 +259,7 @@ section.case-hero {
           font-weight: 300;
           line-height: 1.125;
           letter-spacing: -0.011em;
-          color: $dark-green;
+          color: $black;
         }
       }
 
@@ -271,7 +274,7 @@ section.case-hero {
             content: "";
             width: 1rem;
             height: 1rem;
-            background-color: $dark-green;
+            background-color: $black;
             border-radius: 0.5rem;
             margin-right: 0.5rem;
             display: inline-block;
@@ -310,6 +313,27 @@ section.quote {
   }
 }
 
+section.case-content {
+  div.case-content {
+    &__container {
+      &__copy {
+        p {
+          font-size: clamp(1.602rem, 1.25vw, 2.027rem);
+          letter-spacing: -0.011em;
+          line-height: 1.35;
+        }
+
+        h2 {
+          font-size: clamp(1.802rem, 3vw, 7.406rem);
+          font-weight: 300;
+          line-height: 1.125;
+          letter-spacing: -0.011em;
+        }
+      }
+    }
+  }
+}
+
 footer {
   text-align: center;
 
@@ -336,7 +360,7 @@ footer {
         font-size: clamp(1.802rem, 2.7vw, 4.624rem);
         letter-spacing: -0.011em;
         font-weight: 300;
-        color: $light-green;
+        color: $grey-regular;
         transition: opacity 0.3s ease;
 
         &:hover {

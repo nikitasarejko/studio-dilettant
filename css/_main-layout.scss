@@ -20,7 +20,6 @@ div.mini-logo {
 
 section.home-hero {
   min-height: 100vh;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -41,7 +40,7 @@ section.home-hero {
 
   div.home-content {
     height: 100%;
-    padding: 4rem 0;
+    padding-top: 4rem;
     background-color: white;
     border-top: 1px solid $dark-green;
     display: flex;
@@ -51,6 +50,10 @@ section.home-hero {
     position: relative;
 
     &__copy {
+      overflow: hidden;
+      padding-bottom: 0.8rem;
+      margin-right: 4rem;
+
       h2 {
         span {
           &.flexible {
@@ -69,39 +72,63 @@ section.home-hero {
   }
 }
 
-section.services {
+section.capabilities {
+  position: relative;
   width: calc(100vw - 9.6rem);
+  height: 100%;
   margin-left: 9.6rem;
-  padding: 12rem 4rem;
+  margin-top: 12rem;
+  color: $black;
 
-  display: flex;
-
-  div.services__column {
-    width: 50%;
-    padding-left: 0rem;
-    display: flex;
-    border-right: 1px solid $dark-green;
-
-    &:last-of-type {
-      padding-left: 8rem;
-      border-right: none;
+  div.capabilities {
+    &__inner {
+      display: flex;
+      border-top: 1px solid $black;
+      border-bottom: 1px solid $black;
+      padding: 4rem 0rem;
+      margin: 4rem;
     }
 
-    &--left {
-      width: 25%;
+    &__wrapper {
+      &.wrapper-services {
+        margin-left: 8rem;
+      }
     }
 
-    &--right {
-      width: 75%;
+    &__headline {
+      margin-bottom: 4rem;
     }
 
-    div.services__headline {
-      margin-top: clamp(0.4rem, 0.8vw, 2.4rem);
-      overflow: hidden;
+    &__row {
+      width: 100%;
+      display: flex;
+      margin-left: 3.2rem;
+
+      p {
+        position: relative;
+        display: inline-block;
+        span {
+          position: absolute;
+          left: -3.2rem;
+          top: 27%;
+          right: auto;
+          bottom: auto;
+          font-size: 12px;
+          line-height: 100%;
+          font-weight: 400;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+      }
     }
 
-    div.services__row {
-      padding: clamp(0.4rem, 0.6vw, 1.6rem) 0rem;
+    &__left,
+    &__right {
+      width: 50%;
+    }
+
+    &__right {
+      border-left: 1px solid $black;
     }
   }
 }
@@ -119,8 +146,17 @@ section.featured {
 
     &__case {
       display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
       grid-column-gap: 2.4rem;
+
+      a {
+        &.featured__case__sticky {
+          display: inline-block;
+          text-decoration: none;
+          height: 100%;
+          color: $black;
+        }
+      }
 
       &__img {
         figure {
@@ -169,8 +205,21 @@ section.featured {
       }
 
       &__info {
+        border-right: 1px solid $black;
+        padding-right: 2.4rem;
+
+        &__title {
+          margin-bottom: 1.6rem;
+        }
         &__row {
-          margin-bottom: 2.4rem;
+          margin-bottom: 1.6rem;
+          padding-bottom: 1.6rem;
+          border-bottom: 1px solid $black;
+        }
+
+        &__facts {
+          display: flex;
+          justify-content: space-between;
         }
       }
 
@@ -180,6 +229,13 @@ section.featured {
         }
         &__row {
           margin-bottom: 4rem;
+        }
+      }
+
+      &__sticky {
+        &__button {
+          position: sticky;
+          top: 50vh;
         }
       }
     }
@@ -231,8 +287,8 @@ footer {
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
   padding: 4rem;
-  background-color: $dark-green;
-  color: $light-green;
+  background-color: $black;
+  color: $grey-regular;
 
   display: flex;
 

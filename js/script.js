@@ -1,3 +1,42 @@
+function hoverImageInit() {
+  const cursorImage = document.querySelector(
+    "div.featured__case__img figure img"
+  );
+  const cursor = document.querySelector(
+    "div.featured__case__img figure figcaption"
+  );
+
+  let currentX = 0;
+  let currentY = 0;
+  let aimX = 0;
+  let aimY = 0;
+  let speed = 0.2;
+
+  const animateCursor = function (e) {
+    currentX += (aimX - currentX) * speed;
+    currentY += (aimY - currentY) * speed;
+
+    cursor.style.left = currentX + "px";
+    cursor.style.top = currentY + "px";
+
+    requestAnimationFrame(animateCursor);
+  };
+
+  animateCursor();
+
+  cursorImage.addEventListener("mouseover", function () {
+    cursor.classList.add("show");
+    cursorImage.addEventListener("mousemove", function (e) {
+      aimX = e.pageX;
+      aimY = e.pageY;
+    });
+  });
+
+  cursorImage.addEventListener("mouseout", function () {
+    cursor.classList.remove("show");
+  });
+}
+
 function runInit() {
   // SELECTORS
   const bodyTag = document.querySelector("body");
@@ -6,13 +45,6 @@ function runInit() {
   const navSection = document.querySelector("section.nav");
   const aboutSection = document.querySelector("section.about");
   const dimm = document.querySelector("div.dimmed");
-
-  const cursorImage = document.querySelector(
-    "div.featured__case__img figure img"
-  );
-  const cursor = document.querySelector(
-    "div.featured__case__img figure figcaption"
-  );
 
   // FUNCTIONS
   const heroCopySwitch = function () {
@@ -38,22 +70,6 @@ function runInit() {
       })
       .to(heroCopyHolder, { opacity: 1, y: "0px", duration: 0.5 })
       .to(heroCopyHolder, { opacity: 0, duration: 0.5, delay: 2.5 });
-  };
-
-  let currentX = 0;
-  let currentY = 0;
-  let aimX = 0;
-  let aimY = 0;
-  let speed = 0.2;
-
-  const animateCursor = function (e) {
-    currentX += (aimX - currentX) * speed;
-    currentY += (aimY - currentY) * speed;
-
-    cursor.style.left = currentX + "px";
-    cursor.style.top = currentY + "px";
-
-    requestAnimationFrame(animateCursor);
   };
 
   const openNav = function (e) {
@@ -327,29 +343,43 @@ function runInit() {
     caseHeroImgTl.to(caseHeroImg, { yPercent: 25, scale: 1.05 });
   };
 
+  const revealCaseImages = function () {
+    let revealContainers = document.querySelectorAll(".reveal");
+
+    revealContainers.forEach((container) => {
+      let image = container.querySelector("img");
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          toggleActions: "restart none none reset",
+        },
+      });
+
+      tl.set(container, { autoAlpha: 1 });
+      tl.from(container, 1.5, {
+        xPercent: -100,
+        ease: Power4.out,
+      });
+      tl.from(image, 1.5, {
+        xPercent: 100,
+        scale: 1.25,
+        delay: -1.5,
+        ease: Power4.out,
+      });
+    });
+  };
+
   // RUN FUNCTIONS
   heroCopySwitch();
-  animateCursor();
   footerReveal();
   logoLargeScroll();
   logoSmallScroll();
   caseHeroImgScroll();
+  revealCaseImages();
 
   // EVENTLISTENER
   navToggle.addEventListener("click", openNav);
   aboutToggle.addEventListener("click", openAbout);
-
-  cursorImage.addEventListener("mouseover", function () {
-    cursor.classList.add("show");
-    cursorImage.addEventListener("mousemove", function (e) {
-      aimX = e.pageX;
-      aimY = e.pageY;
-    });
-  });
-
-  cursorImage.addEventListener("mouseout", function () {
-    cursor.classList.remove("show");
-  });
 }
 
 runInit();
@@ -416,19 +446,64 @@ barba.init({
         return enterTl;
       },
     },
+    {
+      name: "index-transition",
+      to: "home",
+      async once() {
+        let done = this.async();
+
+        const navToggle = document.querySelector("#nav-toggle");
+        const aboutToggle = document.querySelector("#about-toggle");
+        const heroContentBox = document.querySelector(
+          "section.home-hero div.home-content"
+        );
+        const heroContentCopy = document.querySelector(
+          "section.home-hero div.home-content__copy"
+        );
+        const heroContentImg = document.querySelector(
+          "section.home-hero div.home-content__img img"
+        );
+
+        const beforeOnceTl = new gsap.timeline({
+          defaults: {
+            duration: 1,
+            ease: "power4.easeOut",
+          },
+        });
+
+        beforeOnceTl
+          .set(navToggle, { left: -48 }, 0)
+          .set(aboutToggle, { left: -96 }, 0)
+          .set(
+            heroContentImg,
+            { clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" },
+            0
+          )
+          .set(heroContentBox, { yPercent: -35 }, 0)
+          .set(heroContentCopy, { yPercent: 100, opacity: 0 }, 0)
+          .to(heroContentBox, { yPercent: 0 }, 1)
+          .to(heroContentCopy, { yPercent: 0, opacity: 1 }, 1)
+          .to(
+            heroContentImg,
+            { clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)" },
+            1
+          )
+          .to(navToggle, { left: 0 }, 2)
+          .to(aboutToggle, { left: 48, onComplete: done }, 2);
+      },
+    },
   ],
   views: [
     {
       namespace: "home",
-      beforeEnter() {},
+      beforeEnter() {
+        hoverImageInit();
+      },
     },
     {
       namespace: "case",
       afterEnter() {
         console.log("LOGO SCROLL FUNCTION STARTED");
-        console.log("FOOTER REVEAL FUNCTION STARTED");
-        console.log("WHY IS EVERYTHING BROKEN?");
-        footerReveal();
       },
     },
   ],

@@ -5,11 +5,16 @@ div#nav-toggle {
   height: 100vh;
   padding-top: 4rem;
   width: 4.8rem;
-  background-color: $dark-green;
+  background-color: white;
+  border-right: 1px solid $black;
   cursor: pointer;
   transition: transform 0.5s linear;
 
   z-index: 778;
+
+  &:hover {
+    background-color: $black;
+  }
 
   &.active {
     transform: translateX(66.666vw);
@@ -23,11 +28,16 @@ div#about-toggle {
   height: 100vh;
   width: 4.8rem;
   padding-top: 4rem;
-  background-color: $light-green;
+  background-color: white;
+  border-right: 1px solid $black;
   cursor: pointer;
   transition: transform 0.5s linear;
 
   z-index: 666;
+
+  &:hover {
+    background-color: $black;
+  }
 
   &.active {
     transform: translateX(66.666vw);
@@ -39,7 +49,7 @@ section.nav {
   top: 0;
   left: 0;
   padding: 8rem;
-  background-color: $dark-green;
+  background-color: white;
   width: 66.666vw;
   min-height: 100vh;
   overflow-y: scroll;
@@ -89,7 +99,7 @@ section.about {
   min-height: 100vh;
   height: 100%;
   overflow: hidden;
-  background-color: $light-green;
+  background-color: white;
   transition: transform 0.5s linear;
 
   z-index: 666;
@@ -156,7 +166,7 @@ section.about {
 }
 
 div.dimmed {
-  background-color: $medium-green;
+  background-color: $black;
   opacity: 0;
   pointer-events: none;
   width: 100vw;
