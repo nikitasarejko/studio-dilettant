@@ -1,10 +1,14 @@
 function hoverImageInit() {
+  const cursorCopy = document.querySelector("div.featured__case__content h2");
+  const cursorCopyResults = Splitting({
+    target: cursorCopy,
+    by: "lines",
+  });
+
   const cursorImage = document.querySelector(
     "div.featured__case__img figure img"
   );
-  const cursor = document.querySelector(
-    "div.featured__case__img figure figcaption"
-  );
+  const cursor = document.querySelector("div.featured__case__img__hover");
 
   let currentX = 0;
   let currentY = 0;
@@ -26,6 +30,24 @@ function hoverImageInit() {
 
   cursorImage.addEventListener("mouseover", function () {
     cursor.classList.add("show");
+    const cursorImageTl = new gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: "SlowMo.ease.config(0.7, 0.7, false)",
+      },
+    });
+
+    const cursorOverlay = document.querySelector("div.featured__case__overlay");
+
+    cursorImageTl
+      .to(cursorImage, { scale: 1.125, delay: -1 }, 0)
+      .to(cursorOverlay, { opacity: 0.6 }, 1)
+      .to(
+        cursorCopyResults[0].words,
+        { opacity: 1, y: "0%", delay: 0.2, stagger: 0.075 },
+        1
+      );
+
     cursorImage.addEventListener("mousemove", function (e) {
       aimX = e.pageX;
       aimY = e.pageY;
@@ -34,7 +56,60 @@ function hoverImageInit() {
 
   cursorImage.addEventListener("mouseout", function () {
     cursor.classList.remove("show");
+
+    const cursorImageTl = new gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: "SlowMo.ease.config(0.7, 0.7, false)",
+      },
+    });
+
+    const cursorCopy = document.querySelector("div.featured__case__content h2");
+    const cursorOverlay = document.querySelector("div.featured__case__overlay");
+
+    cursorImageTl
+      .to(cursorImage, { scale: 1, delay: -1 }, 0)
+      .to(cursorOverlay, { opacity: 0 }, 1)
+      .to(
+        cursorCopyResults[0].words,
+        { opacity: 0, y: "-100%", delay: 0.2, stagger: 0.075 },
+        1
+      )
+      .set(cursorCopyResults[0].words, { opacity: 0, y: "100%" });
   });
+}
+
+function capabilitiesReveal() {
+  const items = document.querySelectorAll("div.capabilities__wrapper > *");
+
+  const tl = new gsap.timeline({
+    scrollTrigger: {
+      trigger: "div.capabilities__inner",
+      start: "top center",
+    },
+  });
+
+  tl.fromTo(
+    items,
+    { y: "50%", opacity: 0 },
+    { y: "0%", opacity: 1, stagger: 0.075 }
+  );
+}
+
+function featuredImageReveal() {
+  const image = document.querySelector("div.featured__case__img figure img");
+  const headline = document.querySelector(
+    "section.featured div.featured__headline"
+  );
+
+  const tl = new gsap.timeline({
+    scrollTrigger: {
+      trigger: headline,
+      start: "top bottom",
+    },
+  });
+
+  tl.from(image, { y: "15%", opacity: 0 });
 }
 
 function runInit() {
@@ -44,6 +119,8 @@ function runInit() {
   const aboutToggle = document.querySelector("#about-toggle");
   const navSection = document.querySelector("section.nav");
   const aboutSection = document.querySelector("section.about");
+  const navToggleText = navToggle.querySelector("p");
+  const aboutToggleText = aboutToggle.querySelector("p");
   const dimm = document.querySelector("div.dimmed");
 
   // FUNCTIONS
@@ -95,7 +172,7 @@ function runInit() {
     const navigationTl = new gsap.timeline({
       defaults: {
         duration: 1,
-        ease: "power3.easeOut",
+        ease: "power4.easeOut",
       },
     });
 
@@ -103,6 +180,9 @@ function runInit() {
       navSection.classList.contains("active") &&
       aboutSection.classList.contains("active")
     ) {
+      navToggleText.innerText = "Index";
+      aboutToggleText.innerText = "About";
+
       navigationTl
         .to(
           portfolioLinks,
@@ -117,6 +197,8 @@ function runInit() {
     ) {
       navSection.classList.add("active");
       navToggle.classList.add("active");
+      navToggleText.innerText = "Close";
+      aboutToggleText.innerText = "About";
 
       navigationTl.to(navHeadline, { y: "0%", delay: 0.5 }, 0).to(
         portfolioLinks,
@@ -132,6 +214,8 @@ function runInit() {
       !aboutSection.classList.contains("active")
     ) {
       addClasses();
+      navToggleText.innerText = "Close";
+      aboutToggleText.innerText = "About";
 
       navigationTl
         .to(navHeadline, { y: "0%", delay: 0.25 }, 0)
@@ -151,7 +235,7 @@ function runInit() {
 
   const openAbout = function (e) {
     const aboutContainer = document.querySelectorAll(
-      "div.about__container p, div.about__container p,div.about__container p, div.about__container a"
+      "div.about__container p, div.about__container a"
     );
     const aboutPortrait = document.querySelector("div.intro-portrait figure");
 
@@ -174,6 +258,8 @@ function runInit() {
       navSection.classList.remove("active");
       navToggle.classList.remove("active");
       bodyTag.classList.remove("body-locked");
+      aboutToggleText.innerText = "About";
+      navToggleText.innerText = "Index";
 
       aboutTl
         .set(
@@ -209,6 +295,9 @@ function runInit() {
       aboutToggle.classList.add("active");
       bodyTag.classList.add("body-locked");
 
+      aboutToggleText.innerText = "Close";
+      navToggleText.innerText = "Index";
+
       aboutTl
         .set(
           aboutPortrait,
@@ -216,14 +305,6 @@ function runInit() {
           0
         )
         .set(aboutContainer, { opacity: 0, y: "48px" }, 0)
-        .to(
-          dimm,
-          {
-            opacity: "0.8",
-            duration: 0.5,
-          },
-          0
-        )
         .to(
           aboutContainer,
           {
@@ -242,8 +323,19 @@ function runInit() {
             duration: 1,
           },
           1
+        )
+        .to(
+          dimm,
+          {
+            opacity: "0.8",
+            duration: 1,
+          },
+          1
         );
     } else if (aboutSection.classList.contains("active")) {
+      aboutToggleText.innerText = "About";
+      navToggleText.innerText = "Index";
+
       aboutTl
         .to(
           aboutContainer,
@@ -369,6 +461,21 @@ function runInit() {
     });
   };
 
+  const clientsReveal = function () {
+    const items = document.querySelectorAll(
+      "div.clients__left__copy p, section.clients div.clients__right__grid img"
+    );
+
+    const tl = new gsap.timeline({
+      scrollTrigger: {
+        trigger: "div.clients__headline",
+        start: "top center",
+      },
+    });
+
+    tl.from(items, { opacity: 0, y: "100%", stagger: 0.075 });
+  };
+
   // RUN FUNCTIONS
   heroCopySwitch();
   footerReveal();
@@ -376,6 +483,9 @@ function runInit() {
   logoSmallScroll();
   caseHeroImgScroll();
   revealCaseImages();
+  featuredImageReveal();
+  capabilitiesReveal();
+  clientsReveal();
 
   // EVENTLISTENER
   navToggle.addEventListener("click", openNav);
@@ -425,7 +535,7 @@ barba.init({
 
         const enterTl = new gsap.timeline({
           defaults: {
-            ease: "Expo.easeIn",
+            ease: "SlowMo.ease.config(0.3, 0.7, false)",
           },
         });
 
@@ -467,29 +577,43 @@ barba.init({
         const beforeOnceTl = new gsap.timeline({
           defaults: {
             duration: 1,
-            ease: "power4.easeOut",
+            ease: "Expo.easeOut",
           },
         });
 
-        beforeOnceTl
-          .set(navToggle, { left: -48 }, 0)
-          .set(aboutToggle, { left: -96 }, 0)
-          .set(
-            heroContentImg,
-            { clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" },
-            0
-          )
-          .set(heroContentBox, { yPercent: -35 }, 0)
-          .set(heroContentCopy, { yPercent: 100, opacity: 0 }, 0)
-          .to(heroContentBox, { yPercent: 0 }, 1)
-          .to(heroContentCopy, { yPercent: 0, opacity: 1 }, 1)
-          .to(
-            heroContentImg,
-            { clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)" },
-            1
-          )
-          .to(navToggle, { left: 0 }, 2)
-          .to(aboutToggle, { left: 48, onComplete: done }, 2);
+        if (window.matchMedia("(max-width: 1024px)").matches) {
+          // FIRST STEP
+          // TODO: change first tween in timeline with:
+          // .to('.box', {scale: 1.2})
+        } else {
+          beforeOnceTl
+            .set(navToggle, { left: -48 }, 0)
+            .set(aboutToggle, { left: -96 }, 0)
+            .set(
+              heroContentImg,
+              { clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" },
+              0
+            )
+            .set(heroContentBox, { yPercent: -35 }, 0)
+            .set(heroContentCopy, { yPercent: 100, opacity: 0 }, 0)
+            .to(heroContentBox, { yPercent: 0, duration: 2.4 }, 1)
+            .to(
+              heroContentCopy,
+              { yPercent: 0, opacity: 1, duration: 2, delay: 0.4 },
+              1
+            )
+            .to(
+              heroContentImg,
+              {
+                clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+                duration: 2,
+                delay: 0.4,
+              },
+              1
+            )
+            .to(navToggle, { left: 0 }, 2)
+            .to(aboutToggle, { left: 48, onComplete: done }, 2);
+        }
       },
     },
   ],

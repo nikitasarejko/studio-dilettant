@@ -1,0 +1,24 @@
+@mixin padding-n-margin {
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding: clamp(0.8rem, 2.8vw, 4.8rem);
+
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+    margin-left: 0;
+    padding: clamp(0.8rem, 2.8vw, 4.8rem);
+  }
+}
+
+@mixin margin-left {
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+}
+
+@mixin margin {
+  margin: clamp(0.8rem, 2.8vw, 4.8rem);
+}
+
+@mixin padding {
+  padding: clamp(0.8rem, 2.8vw, 4.8rem);
+}

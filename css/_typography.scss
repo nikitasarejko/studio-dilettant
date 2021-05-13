@@ -12,12 +12,6 @@ div#nav-toggle {
     text-transform: uppercase;
     pointer-events: none;
   }
-
-  &:hover {
-    p {
-      color: $grey-regular;
-    }
-  }
 }
 
 div#about-toggle {
@@ -27,12 +21,6 @@ div#about-toggle {
     color: $black;
     transform: rotate(90deg);
     text-transform: uppercase;
-  }
-
-  &:hover {
-    p {
-      color: $grey-regular;
-    }
   }
 }
 
@@ -148,10 +136,10 @@ section.capabilities {
     &__headline {
       h5 {
         color: $black;
-        font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+        font-size: clamp(1.266rem, 1.25vw, 1.424rem);
         font-weight: 500;
         letter-spacing: 0.02rem;
-        opacity: 0.7;
+        // opacity: 0.7;
         text-transform: uppercase;
       }
     }
@@ -187,29 +175,36 @@ section.capabilities {
 
 section.featured {
   div.featured {
+    &__headline {
+      h5 {
+        color: $black;
+        font-size: clamp(1.266rem, 1.25vw, 1.424rem);
+        font-weight: 500;
+        letter-spacing: 0.02rem;
+        // opacity: 0.7;
+        text-transform: uppercase;
+      }
+    }
+
     &__case {
-      &__info {
-        &__title {
-          h5 {
-            font-size: clamp(1.802rem, 1.8vw, 5.852rem);
-            font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: -0.011em;
-            line-height: 0.95;
-            color: $black;
-          }
+      &__img {
+        &__hover {
+          color: white;
+          font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+          font-weight: 400;
+          letter-spacing: 0.011em;
+          text-transform: uppercase;
         }
       }
 
-      &__img {
-        figure {
-          figcaption {
-            color: $light-green;
-            font-size: 1.266rem;
-            font-weight: 500;
-            letter-spacing: 0.011em;
-            text-transform: uppercase;
-          }
+      &__content {
+        h2 {
+          font-size: clamp(1.802rem, 2.4vw, 9.373rem);
+          line-height: 1.25;
+          font-weight: 300;
+          letter-spacing: -0.011em;
+          color: white;
+          text-align: center;
         }
       }
     }
@@ -220,10 +215,10 @@ section.clients {
   div.clients__headline {
     h5 {
       color: $black;
-      font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+      font-size: clamp(1.266rem, 1.25vw, 1.424rem);
       font-weight: 500;
       letter-spacing: 0.02rem;
-      opacity: 0.7;
+      // opacity: 0.7;
       text-transform: uppercase;
     }
   }
@@ -367,6 +362,22 @@ footer {
           opacity: 0.4;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  div#nav-toggle {
+    p {
+      font-size: 1.266rem;
+      transform: rotate(0);
+    }
+  }
+
+  div#about-toggle {
+    p {
+      font-size: 1.266rem;
+      transform: rotate(0);
     }
   }
 }

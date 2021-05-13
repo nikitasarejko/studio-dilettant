@@ -8,12 +8,12 @@ div#nav-toggle {
   background-color: white;
   border-right: 1px solid $black;
   cursor: pointer;
-  transition: transform 0.5s linear;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
 
   z-index: 778;
 
   &:hover {
-    background-color: $black;
+    background-color: $grey-regular;
   }
 
   &.active {
@@ -31,12 +31,12 @@ div#about-toggle {
   background-color: white;
   border-right: 1px solid $black;
   cursor: pointer;
-  transition: transform 0.5s linear;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
 
   z-index: 666;
 
   &:hover {
-    background-color: $black;
+    background-color: $grey-regular;
   }
 
   &.active {
@@ -53,7 +53,7 @@ section.nav {
   width: 66.666vw;
   min-height: 100vh;
   overflow-y: scroll;
-  transition: transform 0.5s linear;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
 
   z-index: 777;
   transform: translateX(-100%);
@@ -100,7 +100,7 @@ section.about {
   height: 100%;
   overflow: hidden;
   background-color: white;
-  transition: transform 0.5s linear;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
 
   z-index: 666;
   transform: translateX(-100%);
@@ -177,4 +177,103 @@ div.dimmed {
   right: 0;
   bottom: 0;
   z-index: 2;
+}
+
+@media only screen and (max-width: 1024px) {
+  div#nav-toggle {
+    height: 3.2rem;
+    padding: 0.8rem;
+    width: 100%;
+    left: 0;
+    border-right: none;
+    border-bottom: 1px solid $black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 888;
+
+    &.active {
+      transform: translateY(calc(100vh - 6.4rem));
+    }
+  }
+
+  div#about-toggle {
+    top: 3.2rem;
+    left: 0;
+    height: 3.2rem;
+    width: 100%;
+    padding: 0.8rem;
+    border-right: none;
+    border-bottom: 1px solid $black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 888;
+
+    &.active {
+      transform: translateY(calc(100vh - 6.4rem));
+    }
+  }
+
+  section.nav {
+    padding: 2.4rem;
+    width: 100vw;
+
+    z-index: 777;
+    transform: translateY(-100%);
+
+    &.active {
+      transform: translateY(0%);
+    }
+
+    div.nav__grid {
+      margin-top: 2.4rem;
+    }
+  }
+
+  section.about {
+    width: 100vw;
+    transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+
+    z-index: 666;
+    transform: translateY(-100%);
+
+    &.active {
+      transform: translateY(3.2rem);
+    }
+
+    div.about__container {
+      padding: 2.4rem;
+
+      div.intro-portrait {
+        width: 100%;
+        margin-top: 2.4rem;
+
+        figure {
+          figcaption {
+            p {
+              margin-top: 0.8rem;
+            }
+          }
+        }
+      }
+
+      div.intro-contact {
+        padding-top: 4rem;
+        margin-bottom: 6.4rem;
+
+        &__grid {
+          padding-top: 2.4rem;
+        }
+
+        div.intro-contact__row {
+          padding-bottom: 2.4rem;
+        }
+      }
+    }
+  }
 }

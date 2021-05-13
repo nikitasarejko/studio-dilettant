@@ -230,92 +230,76 @@
         </section>
 
         <section class="featured">
-          <div class="featured__headline">
-            <h5>Latest Case</h5>
-          </div>
-
-          <div class="featured__case">
-            <div class="featured__case__img">
-              <a href="./case/example.html">
-                <figure>
-                  <img src="./img/hero-001.png" />
-                  <figcaption>View Case Study</figcaption>
-                </figure>
-              </a>
+          <div class="featured__inner">
+            <div class="featured__headline">
+              <h5>Explore our latest case studies</h5>
             </div>
-            <div class="featured__case__info">
-              <div class="featured__case__info__row">
-                <div class="featured__case__info__title">
-                  <h5>
+            <div class="featured__case">
+              <div class="featured__case__img__hover">View Case Study ↪</div>
+              <div class="featured__case__img">
+                <a href="./case/example.html">
+                  <figure>
+                    <img src="./img/hero-001.png" />
+                  </figure>
+                </a>
+                <div class="featured__case__overlay"></div>
+                <div class="featured__case__content">
+                  <h2>
                     Entwicklung einer Kleinserie für Berliner Couch Manufaktur
-                  </h5>
-                </div>
-                <div class="featured__case__info__facts">
-                  <p class="facts">Apr 2018 — Nov 2019</p>
-                  <p class="facts">Berlin, DE</p>
-                </div>
-              </div>
-              <div class="featured__case__info__row">
-                <p>
-                  Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle
-                  Buchstaben da sind und wie sie aussehen. Manchmal benutzt man
-                  Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um
-                  Schriften zu testen.
-                </p>
-              </div>
-              <div class="featured__case__info__row">
-                <div class="featured__case__info__headline">
-                  <h6>Products</h6>
-                </div>
-                <div class="featured__case__info__content">
-                  <p>Stahltisch Gestell (gepulvert)</p>
-                  <p>Drehgriffe aus Messing</p>
-                </div>
-              </div>
-
-              <div class="featured__case__info__row">
-                <div class="featured__case__info__headline">
-                  <h6>Services</h6>
-                </div>
-                <div class="featured__case__info__content">
-                  <p>Ausführungsplanung</p>
-                  <p>Entwurfsplanung</p>
-                  <p>Objektbetreuung</p>
-                  <p>Belastungsanalyse</p>
-                  <p>Prototypenbau</p>
+                  </h2>
                 </div>
               </div>
             </div>
-            <a href="#" class="featured__case__sticky">
-              <div class="featured__case__sticky__button">View Case</div>
-            </a>
           </div>
         </section>
         <section class="clients">
-          <div class="clients__headline">
-            <h5>Clients & Partners</h5>
-          </div>
-          <div class="clients__content">
-            <div class="clients__left">
-              <div class="clients__left__copy">
-                <p>
-                  We seriously love our work and because we do, we work with
-                  partners and collaborators who share our values and our
-                  commitment.
-                </p>
-              </div>
+          <div class="clients__inner">
+            <div class="clients__headline">
+              <h5>Our partners</h5>
             </div>
-            <div class="clients__right">
-              <div class="clients__right__grid">
-                <img src="./img/logos/artless-logo.png" alt="Logo" />
-                <img src="./img/logos/bbpa-logo.png" alt="Logo" />
-                <img src="./img/logos/derraum-logo.png" alt="Logo" />
-                <img src="./img/logos/hedera-logo.png" alt="Logo" />
-                <img src="./img/logos/henn-logo.png" alt="Logo" />
-                <img src="./img/logos/holzraum-logo.png" alt="Logo" />
-                <img src="./img/logos/jackbenimble-logo.png" alt="Logo" />
-                <img src="./img/logos/kinzo-logo.png" alt="Logo" />
-                <img src="./img/logos/philipp-fuerhofer-logo.png" alt="Logo" />
+            <div class="clients__content">
+              <div class="clients__left">
+                <div class="clients__left__copy">
+                  <p>
+                    We seriously love our work and because we do, we work with
+                    partners and collaborators who share our values and our
+                    commitment.
+                  </p>
+                </div>
+              </div>
+              <div class="clients__right">
+                <div class="clients__right__grid">
+                  <div class="clients__right__grid__wrapper">
+                    <img src="../img/logos/artless-logo.png" alt="Logo" />
+                  </div>
+                  <div class="clients__right__grid__wrapper">
+                    <img src="../img/logos/bbpa-logo.png" alt="Logo" />
+                  </div>
+                  <div class="clients__right__grid__wrapper">
+                    <img src="../img/logos/derraum-logo.png" alt="Logo" />
+                  </div>
+                  <div class="clients__right__grid__wrapper">
+                    <img src="../img/logos/hedera-logo.png" alt="Logo" />
+                  </div>
+                  <div class="clients__right__grid__wrapper">
+                    <img src="../img/logos/henn-logo.png" alt="Logo" />
+                  </div>
+                  <div class="clients__right__grid__wrapper">
+                    <img src="../img/logos/holzraum-logo.png" alt="Logo" />
+                  </div>
+                  <div class="clients__right__grid__wrapper">
+                    <img src="../img/logos/jackbenimble-logo.png" alt="Logo" />
+                  </div>
+                  <div class="clients__right__grid__wrapper">
+                    <img src="../img/logos/kinzo-logo.png" alt="Logo" />
+                  </div>
+                  <div class="clients__right__grid__wrapper">
+                    <img
+                      src="../img/logos/philipp-fuerhofer-logo.png"
+                      alt="Logo"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -359,6 +343,7 @@
     <div class="swipe swipe-3"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
       integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="

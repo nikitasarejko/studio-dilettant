@@ -23,10 +23,7 @@ section.home-hero {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: calc(100vw - 9.6rem);
-  margin-left: 9.6rem;
-
-  padding: 4rem;
+  @include padding-n-margin;
 
   div.home-logo {
     width: 100%;
@@ -74,19 +71,17 @@ section.home-hero {
 
 section.capabilities {
   position: relative;
-  width: calc(100vw - 9.6rem);
   height: 100%;
-  margin-left: 9.6rem;
-  margin-top: 12rem;
   color: $black;
+  @include margin-left;
 
   div.capabilities {
     &__inner {
       display: flex;
       border-top: 1px solid $black;
       border-bottom: 1px solid $black;
-      padding: 4rem 0rem;
-      margin: 4rem;
+      @include margin;
+      padding: clamp(0.8rem, 2.8vw, 4.8rem) 0rem;
     }
 
     &__wrapper {
@@ -136,42 +131,69 @@ section.capabilities {
 section.featured {
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
-  padding: 12rem 4rem;
+  padding: 8rem 0rem;
 
   div.featured {
+    &__inner {
+      padding-top: clamp(0.8rem, 1.8vw, 4rem);
+      border-top: 1px solid $black;
+      @include margin;
+    }
+
     &__headline {
-      margin-bottom: 4rem;
+      margin-bottom: clamp(0.8rem, 1.8vw, 4rem);
       overflow: hidden;
     }
 
     &__case {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-column-gap: 2.4rem;
-
-      a {
-        &.featured__case__sticky {
-          display: inline-block;
-          text-decoration: none;
-          height: 100%;
-          color: $black;
-        }
-      }
-
       &__img {
+        position: relative;
+
+        &__hover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transform: translate(-50%, -50%);
+          transition: opacity 1s ease;
+          pointer-events: none;
+
+          display: inline-block;
+          mix-blend-mode: difference;
+          will-change: top, left;
+          z-index: 5;
+
+          // &::before {
+          //   content: "";
+          //   display: inline-block;
+          //   width: 1rem;
+          //   height: 1rem;
+          //   border-radius: 0.5rem;
+          //   background-color: $medium-green;
+          //   margin-right: 1rem;
+          // }
+
+          &.show {
+            opacity: 1;
+          }
+        }
+
         figure {
           overflow: hidden;
+          width: 100%;
+          max-height: 82.5vh;
 
           &:hover {
             cursor: none;
-
-            img {
-              transform: scale(1.025);
-            }
           }
 
           img {
-            transition: transform 0.3s ease-in-out;
+            transition: transform 1s ease-in-out;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: relative;
           }
 
           figcaption {
@@ -204,38 +226,36 @@ section.featured {
         }
       }
 
-      &__info {
-        border-right: 1px solid $black;
-        padding-right: 2.4rem;
-
-        &__title {
-          margin-bottom: 1.6rem;
-        }
-        &__row {
-          margin-bottom: 1.6rem;
-          padding-bottom: 1.6rem;
-          border-bottom: 1px solid $black;
-        }
-
-        &__facts {
-          display: flex;
-          justify-content: space-between;
-        }
+      &__overlay {
+        background-color: black;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
       }
 
-      &__facts {
-        &__headline {
-          margin-bottom: 1.6rem;
-        }
-        &__row {
-          margin-bottom: 4rem;
-        }
-      }
+      &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 50%;
+        padding: 4vw;
+        pointer-events: none;
 
-      &__sticky {
-        &__button {
-          position: sticky;
-          top: 50vh;
+        h2 {
+          overflow: hidden;
+
+          span.word {
+            opacity: 0;
+            display: inline-flex;
+            transform: translateY(100%);
+          }
         }
       }
     }
@@ -245,11 +265,17 @@ section.featured {
 section.clients {
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
-  padding: 12rem 4rem;
+  padding: 8rem 0rem;
 
   div.clients {
+    &__inner {
+      padding-top: clamp(0.8rem, 1.8vw, 4rem);
+      border-top: 1px solid $black;
+      @include margin;
+    }
+
     &__headline {
-      margin-bottom: 4rem;
+      margin-bottom: clamp(0.8rem, 1.8vw, 4rem);
       overflow: hidden;
     }
 
@@ -259,6 +285,10 @@ section.clients {
 
     &__left {
       width: 25%;
+
+      &__copy {
+        overflow: hidden;
+      }
     }
 
     &__right {
@@ -270,9 +300,13 @@ section.clients {
         grid-gap: 1.6rem;
         justify-items: center;
 
-        img {
-          max-width: 12rem;
-          filter: grayscale(1);
+        &__wrapper {
+          overflow: hidden;
+
+          img {
+            max-width: 12rem;
+            filter: grayscale(1);
+          }
         }
       }
     }
@@ -340,17 +374,32 @@ div.swipe {
   transform: translateX(-100%);
 
   &-1 {
-    background-color: $dark-green;
+    background-color: #131316;
     z-index: 1000;
   }
 
   &-2 {
-    background-color: $medium-green;
+    background-color: $grey-dark;
     z-index: 999;
   }
 
   &-3 {
-    background-color: $light-green;
+    background-color: $grey-regular;
     z-index: 998;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  section.home-hero {
+    min-height: auto;
+    margin-top: 6.4rem;
+
+    div.home-content {
+      &__img {
+        img {
+          height: 50vh;
+        }
+      }
+    }
   }
 }

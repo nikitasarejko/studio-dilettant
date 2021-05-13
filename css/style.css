@@ -12,9 +12,6 @@ div#nav-toggle p {
   text-transform: uppercase;
   pointer-events: none;
 }
-div#nav-toggle:hover p {
-  color: #e2ddd7;
-}
 
 div#about-toggle p {
   font-size: 1.424rem;
@@ -22,9 +19,6 @@ div#about-toggle p {
   color: #1d1814;
   transform: rotate(90deg);
   text-transform: uppercase;
-}
-div#about-toggle:hover p {
-  color: #e2ddd7;
 }
 
 section.nav h4.title {
@@ -96,10 +90,9 @@ section.home-hero div.home-content__copy p {
 
 section.capabilities div.capabilities__headline h5 {
   color: #1d1814;
-  font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+  font-size: clamp(1.266rem, 1.25vw, 1.424rem);
   font-weight: 500;
   letter-spacing: 0.02rem;
-  opacity: 0.7;
   text-transform: uppercase;
 }
 section.capabilities div.capabilities__row p {
@@ -126,28 +119,34 @@ section.capabilities div.capabilities__row p span {
   text-transform: uppercase;
 }
 
-section.featured div.featured__case__info__title h5 {
-  font-size: clamp(1.802rem, 1.8vw, 5.852rem);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: -0.011em;
-  line-height: 0.95;
+section.featured div.featured__headline h5 {
   color: #1d1814;
-}
-section.featured div.featured__case__img figure figcaption {
-  color: #eff1e2;
-  font-size: 1.266rem;
+  font-size: clamp(1.266rem, 1.25vw, 1.424rem);
   font-weight: 500;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+}
+section.featured div.featured__case__img__hover {
+  color: white;
+  font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+  font-weight: 400;
   letter-spacing: 0.011em;
   text-transform: uppercase;
+}
+section.featured div.featured__case__content h2 {
+  font-size: clamp(1.802rem, 2.4vw, 9.373rem);
+  line-height: 1.25;
+  font-weight: 300;
+  letter-spacing: -0.011em;
+  color: white;
+  text-align: center;
 }
 
 section.clients div.clients__headline h5 {
   color: #1d1814;
-  font-size: clamp(1.266rem, 1.25vw, 1.602rem);
+  font-size: clamp(1.266rem, 1.25vw, 1.424rem);
   font-weight: 500;
   letter-spacing: 0.02rem;
-  opacity: 0.7;
   text-transform: uppercase;
 }
 section.clients div.clients__left__copy p {
@@ -238,6 +237,17 @@ footer div.footer__links a:hover {
   opacity: 0.4;
 }
 
+@media only screen and (max-width: 1024px) {
+  div#nav-toggle p {
+    font-size: 1.266rem;
+    transform: rotate(0);
+  }
+
+  div#about-toggle p {
+    font-size: 1.266rem;
+    transform: rotate(0);
+  }
+}
 div#nav-toggle {
   position: fixed;
   top: 0;
@@ -248,11 +258,11 @@ div#nav-toggle {
   background-color: white;
   border-right: 1px solid #1d1814;
   cursor: pointer;
-  transition: transform 0.5s linear;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
   z-index: 778;
 }
 div#nav-toggle:hover {
-  background-color: #1d1814;
+  background-color: #e2ddd7;
 }
 div#nav-toggle.active {
   transform: translateX(66.666vw);
@@ -268,11 +278,11 @@ div#about-toggle {
   background-color: white;
   border-right: 1px solid #1d1814;
   cursor: pointer;
-  transition: transform 0.5s linear;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
   z-index: 666;
 }
 div#about-toggle:hover {
-  background-color: #1d1814;
+  background-color: #e2ddd7;
 }
 div#about-toggle.active {
   transform: translateX(66.666vw);
@@ -287,7 +297,7 @@ section.nav {
   width: 66.666vw;
   min-height: 100vh;
   overflow-y: scroll;
-  transition: transform 0.5s linear;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
   z-index: 777;
   transform: translateX(-100%);
 }
@@ -327,7 +337,7 @@ section.about {
   height: 100%;
   overflow: hidden;
   background-color: white;
-  transition: transform 0.5s linear;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
   z-index: 666;
   transform: translateX(-100%);
 }
@@ -389,6 +399,83 @@ div.dimmed {
   z-index: 2;
 }
 
+@media only screen and (max-width: 1024px) {
+  div#nav-toggle {
+    height: 3.2rem;
+    padding: 0.8rem;
+    width: 100%;
+    left: 0;
+    border-right: none;
+    border-bottom: 1px solid #1d1814;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 888;
+  }
+  div#nav-toggle.active {
+    transform: translateY(calc(100vh - 6.4rem));
+  }
+
+  div#about-toggle {
+    top: 3.2rem;
+    left: 0;
+    height: 3.2rem;
+    width: 100%;
+    padding: 0.8rem;
+    border-right: none;
+    border-bottom: 1px solid #1d1814;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 888;
+  }
+  div#about-toggle.active {
+    transform: translateY(calc(100vh - 6.4rem));
+  }
+
+  section.nav {
+    padding: 2.4rem;
+    width: 100vw;
+    z-index: 777;
+    transform: translateY(-100%);
+  }
+  section.nav.active {
+    transform: translateY(0%);
+  }
+  section.nav div.nav__grid {
+    margin-top: 2.4rem;
+  }
+
+  section.about {
+    width: 100vw;
+    transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+    z-index: 666;
+    transform: translateY(-100%);
+  }
+  section.about.active {
+    transform: translateY(3.2rem);
+  }
+  section.about div.about__container {
+    padding: 2.4rem;
+  }
+  section.about div.about__container div.intro-portrait {
+    width: 100%;
+    margin-top: 2.4rem;
+  }
+  section.about div.about__container div.intro-portrait figure figcaption p {
+    margin-top: 0.8rem;
+  }
+  section.about div.about__container div.intro-contact {
+    padding-top: 4rem;
+    margin-bottom: 6.4rem;
+  }
+  section.about div.about__container div.intro-contact__grid {
+    padding-top: 2.4rem;
+  }
+  section.about div.about__container div.intro-contact div.intro-contact__row {
+    padding-bottom: 2.4rem;
+  }
+}
 div.mini-logo {
   position: fixed;
   top: 0;
@@ -413,7 +500,14 @@ section.home-hero {
   justify-content: space-between;
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
-  padding: 4rem;
+  padding: clamp(0.8rem, 2.8vw, 4.8rem);
+}
+@media only screen and (max-width: 1024px) {
+  section.home-hero {
+    width: 100%;
+    margin-left: 0;
+    padding: clamp(0.8rem, 2.8vw, 4.8rem);
+  }
 }
 section.home-hero div.home-logo {
   width: 100%;
@@ -449,18 +543,17 @@ section.home-hero div.home-content__img img {
 
 section.capabilities {
   position: relative;
-  width: calc(100vw - 9.6rem);
   height: 100%;
-  margin-left: 9.6rem;
-  margin-top: 12rem;
   color: #1d1814;
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
 }
 section.capabilities div.capabilities__inner {
   display: flex;
   border-top: 1px solid #1d1814;
   border-bottom: 1px solid #1d1814;
-  padding: 4rem 0rem;
-  margin: 4rem;
+  margin: clamp(0.8rem, 2.8vw, 4.8rem);
+  padding: clamp(0.8rem, 2.8vw, 4.8rem) 0rem;
 }
 section.capabilities div.capabilities__wrapper.wrapper-services {
   margin-left: 8rem;
@@ -499,34 +592,51 @@ section.capabilities div.capabilities__right {
 section.featured {
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
-  padding: 12rem 4rem;
+  padding: 8rem 0rem;
+}
+section.featured div.featured__inner {
+  padding-top: clamp(0.8rem, 1.8vw, 4rem);
+  border-top: 1px solid #1d1814;
+  margin: clamp(0.8rem, 2.8vw, 4.8rem);
 }
 section.featured div.featured__headline {
-  margin-bottom: 4rem;
+  margin-bottom: clamp(0.8rem, 1.8vw, 4rem);
   overflow: hidden;
 }
-section.featured div.featured__case {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-column-gap: 2.4rem;
+section.featured div.featured__case__img {
+  position: relative;
 }
-section.featured div.featured__case a.featured__case__sticky {
+section.featured div.featured__case__img__hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 1s ease;
+  pointer-events: none;
   display: inline-block;
-  text-decoration: none;
-  height: 100%;
-  color: #1d1814;
+  mix-blend-mode: difference;
+  will-change: top, left;
+  z-index: 5;
+}
+section.featured div.featured__case__img__hover.show {
+  opacity: 1;
 }
 section.featured div.featured__case__img figure {
   overflow: hidden;
+  width: 100%;
+  max-height: 82.5vh;
 }
 section.featured div.featured__case__img figure:hover {
   cursor: none;
 }
-section.featured div.featured__case__img figure:hover img {
-  transform: scale(1.025);
-}
 section.featured div.featured__case__img figure img {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
 }
 section.featured div.featured__case__img figure figcaption {
   position: absolute;
@@ -552,40 +662,48 @@ section.featured div.featured__case__img figure figcaption::before {
 section.featured div.featured__case__img figure figcaption.show {
   opacity: 1;
 }
-section.featured div.featured__case__info {
-  border-right: 1px solid #1d1814;
-  padding-right: 2.4rem;
+section.featured div.featured__case__overlay {
+  background-color: black;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
 }
-section.featured div.featured__case__info__title {
-  margin-bottom: 1.6rem;
+section.featured div.featured__case__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 50%;
+  padding: 4vw;
+  pointer-events: none;
 }
-section.featured div.featured__case__info__row {
-  margin-bottom: 1.6rem;
-  padding-bottom: 1.6rem;
-  border-bottom: 1px solid #1d1814;
+section.featured div.featured__case__content h2 {
+  overflow: hidden;
 }
-section.featured div.featured__case__info__facts {
-  display: flex;
-  justify-content: space-between;
-}
-section.featured div.featured__case__facts__headline {
-  margin-bottom: 1.6rem;
-}
-section.featured div.featured__case__facts__row {
-  margin-bottom: 4rem;
-}
-section.featured div.featured__case__sticky__button {
-  position: sticky;
-  top: 50vh;
+section.featured div.featured__case__content h2 span.word {
+  opacity: 0;
+  display: inline-flex;
+  transform: translateY(100%);
 }
 
 section.clients {
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
-  padding: 12rem 4rem;
+  padding: 8rem 0rem;
+}
+section.clients div.clients__inner {
+  padding-top: clamp(0.8rem, 1.8vw, 4rem);
+  border-top: 1px solid #1d1814;
+  margin: clamp(0.8rem, 2.8vw, 4.8rem);
 }
 section.clients div.clients__headline {
-  margin-bottom: 4rem;
+  margin-bottom: clamp(0.8rem, 1.8vw, 4rem);
   overflow: hidden;
 }
 section.clients div.clients__content {
@@ -593,6 +711,9 @@ section.clients div.clients__content {
 }
 section.clients div.clients__left {
   width: 25%;
+}
+section.clients div.clients__left__copy {
+  overflow: hidden;
 }
 section.clients div.clients__right {
   width: 75%;
@@ -603,7 +724,10 @@ section.clients div.clients__right__grid {
   grid-gap: 1.6rem;
   justify-items: center;
 }
-section.clients div.clients__right__grid img {
+section.clients div.clients__right__grid__wrapper {
+  overflow: hidden;
+}
+section.clients div.clients__right__grid__wrapper img {
   max-width: 12rem;
   filter: grayscale(1);
 }
@@ -657,18 +781,27 @@ div.swipe {
   transform: translateX(-100%);
 }
 div.swipe-1 {
-  background-color: #14302b;
+  background-color: #131316;
   z-index: 1000;
 }
 div.swipe-2 {
-  background-color: #d8ddd3;
+  background-color: #c7bdb3;
   z-index: 999;
 }
 div.swipe-3 {
-  background-color: #eff1e2;
+  background-color: #e2ddd7;
   z-index: 998;
 }
 
+@media only screen and (max-width: 1024px) {
+  section.home-hero {
+    min-height: auto;
+    margin-top: 6.4rem;
+  }
+  section.home-hero div.home-content__img img {
+    height: 50vh;
+  }
+}
 section.case-hero {
   height: 100vh;
   width: calc(100vw - 9.6rem);
