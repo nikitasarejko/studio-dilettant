@@ -318,11 +318,9 @@ footer {
   bottom: 0;
   right: 0;
   height: 66.667vh;
-  width: calc(100vw - 9.6rem);
-  margin-left: 9.6rem;
-  padding: 4rem;
   background-color: $black;
   color: $grey-regular;
+  @include padding-n-margin;
 
   display: flex;
 
@@ -401,5 +399,21 @@ div.swipe {
         }
       }
     }
+  }
+
+  section.capabilities {
+    margin-top: 6.4rem;
+  }
+
+  section.featured {
+    width: 100%;
+    margin-left: 0;
+    padding: 2.4rem 0rem;
+  }
+
+  section.clients {
+    width: 100%;
+    margin-left: 0;
+    padding: 2.4rem 0rem;
   }
 }

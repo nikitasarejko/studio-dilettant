@@ -222,12 +222,17 @@ div.dimmed {
   section.nav {
     padding: 2.4rem;
     width: 100vw;
+    height: -webkit-fill-available;
 
     z-index: 777;
     transform: translateY(-100%);
 
     &.active {
       transform: translateY(0%);
+    }
+
+    div.nav__titlewrapper {
+      height: auto;
     }
 
     div.nav__grid {
@@ -237,6 +242,7 @@ div.dimmed {
 
   section.about {
     width: 100vw;
+    height: -webkit-fill-available;
     transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
 
     z-index: 666;

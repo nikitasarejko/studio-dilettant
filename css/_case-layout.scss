@@ -1,7 +1,6 @@
 section.case-hero {
   height: 100vh;
-  width: calc(100vw - 9.6rem);
-  margin-left: 9.6rem;
+  @include margin-left;
 
   display: flex;
   justify-content: space-between;
@@ -68,10 +67,7 @@ section.case-hero {
 
 section.quote {
   background-color: white;
-  // margin: 16rem 16rem 16rem calc(16rem + 4.8rem);
-  margin-left: 9.6rem;
-  width: calc(100vw - 9.6rem);
-  padding: 16rem 4rem;
+  @include padding-n-margin;
 
   display: flex;
   justify-content: space-between;
@@ -80,13 +76,13 @@ section.quote {
     &__inner {
       width: 100%;
       height: 100%;
-      padding: 8rem;
+      padding: clamp(2.4rem, 4vw, 8rem);
       border-top: 1px solid $dark-green;
       border-bottom: 1px solid $dark-green;
     }
 
     &__info {
-      margin-top: 8rem;
+      margin-top: clamp(4rem, 6vw, 12rem);
     }
 
     &__wrapper {
@@ -99,8 +95,7 @@ section.quote {
 }
 
 section.case-content {
-  width: calc(100vw - 9.6rem);
-  margin-left: 9.6rem;
+  @include margin-left;
 
   div.case-content {
     &__container {
@@ -168,6 +163,29 @@ section.case-content {
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  section.case-hero {
+    flex-direction: column-reverse;
+    height: auto;
+
+    div.case-hero {
+      &__left {
+        width: 100%;
+        height: auto;
+
+        &__headline {
+          margin-bottom: 4rem;
+        }
+      }
+
+      &__right {
+        width: 100%;
+        height: 50%;
       }
     }
   }

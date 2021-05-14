@@ -436,11 +436,15 @@ div.dimmed {
   section.nav {
     padding: 2.4rem;
     width: 100vw;
+    height: -webkit-fill-available;
     z-index: 777;
     transform: translateY(-100%);
   }
   section.nav.active {
     transform: translateY(0%);
+  }
+  section.nav div.nav__titlewrapper {
+    height: auto;
   }
   section.nav div.nav__grid {
     margin-top: 2.4rem;
@@ -448,6 +452,7 @@ div.dimmed {
 
   section.about {
     width: 100vw;
+    height: -webkit-fill-available;
     transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
     z-index: 666;
     transform: translateY(-100%);
@@ -547,6 +552,12 @@ section.capabilities {
   color: #1d1814;
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
+}
+@media only screen and (max-width: 1024px) {
+  section.capabilities {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 section.capabilities div.capabilities__inner {
   display: flex;
@@ -737,12 +748,19 @@ footer {
   bottom: 0;
   right: 0;
   height: 66.667vh;
-  width: calc(100vw - 9.6rem);
-  margin-left: 9.6rem;
-  padding: 4rem;
   background-color: #1d1814;
   color: #e2ddd7;
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding: clamp(0.8rem, 2.8vw, 4.8rem);
   display: flex;
+}
+@media only screen and (max-width: 1024px) {
+  footer {
+    width: 100%;
+    margin-left: 0;
+    padding: clamp(0.8rem, 2.8vw, 4.8rem);
+  }
 }
 footer div.footer__inner {
   display: flex;
@@ -801,6 +819,22 @@ div.swipe-3 {
   section.home-hero div.home-content__img img {
     height: 50vh;
   }
+
+  section.capabilities {
+    margin-top: 6.4rem;
+  }
+
+  section.featured {
+    width: 100%;
+    margin-left: 0;
+    padding: 2.4rem 0rem;
+  }
+
+  section.clients {
+    width: 100%;
+    margin-left: 0;
+    padding: 2.4rem 0rem;
+  }
 }
 section.case-hero {
   height: 100vh;
@@ -808,6 +842,12 @@ section.case-hero {
   margin-left: 9.6rem;
   display: flex;
   justify-content: space-between;
+}
+@media only screen and (max-width: 1024px) {
+  section.case-hero {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 section.case-hero div.case-hero__left, section.case-hero div.case-hero__right {
   width: 50%;
@@ -854,21 +894,28 @@ section.case-hero div.case-hero__right figure img {
 
 section.quote {
   background-color: white;
-  margin-left: 9.6rem;
   width: calc(100vw - 9.6rem);
-  padding: 16rem 4rem;
+  margin-left: 9.6rem;
+  padding: clamp(0.8rem, 2.8vw, 4.8rem);
   display: flex;
   justify-content: space-between;
+}
+@media only screen and (max-width: 1024px) {
+  section.quote {
+    width: 100%;
+    margin-left: 0;
+    padding: clamp(0.8rem, 2.8vw, 4.8rem);
+  }
 }
 section.quote div.quote__inner {
   width: 100%;
   height: 100%;
-  padding: 8rem;
+  padding: clamp(2.4rem, 4vw, 8rem);
   border-top: 1px solid #14302b;
   border-bottom: 1px solid #14302b;
 }
 section.quote div.quote__info {
-  margin-top: 8rem;
+  margin-top: clamp(4rem, 6vw, 12rem);
 }
 section.quote div.quote__wrapper {
   overflow: hidden;
@@ -880,6 +927,12 @@ section.quote div.quote__wrapper {
 section.case-content {
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
+}
+@media only screen and (max-width: 1024px) {
+  section.case-content {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 section.case-content div.case-content__container {
   padding: 2.4rem;
@@ -936,6 +989,23 @@ section.case-content div.case-content__container__img div.half-width-image img.p
   padding: 4.8rem;
 }
 
+@media only screen and (max-width: 1024px) {
+  section.case-hero {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  section.case-hero div.case-hero__left {
+    width: 100%;
+    height: auto;
+  }
+  section.case-hero div.case-hero__left__headline {
+    margin-bottom: 4rem;
+  }
+  section.case-hero div.case-hero__right {
+    width: 100%;
+    height: 50%;
+  }
+}
 html {
   font-family: "Inter", sans-serif;
 }
