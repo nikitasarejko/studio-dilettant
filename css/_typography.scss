@@ -381,3 +381,18 @@ footer {
     }
   }
 }
+
+@media only screen and (max-width: 540px) {
+  section.home-hero {
+    div.home {
+      &-content {
+        &__copy {
+          h2,
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

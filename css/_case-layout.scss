@@ -68,6 +68,7 @@ section.case-hero {
 section.quote {
   background-color: white;
   @include padding-n-margin;
+  padding: clamp(2.4rem, 8vw, 12rem) 4rem;
 
   display: flex;
   justify-content: space-between;
