@@ -195,7 +195,7 @@ div.dimmed {
     z-index: 888;
 
     &.active {
-      transform: translateY(calc(100vh - 6.4rem));
+      transform: translateY(0);
     }
   }
 
@@ -215,12 +215,12 @@ div.dimmed {
     z-index: 888;
 
     &.active {
-      transform: translateY(calc(100vh - 6.4rem));
+      transform: translateY(0);
     }
   }
 
   section.nav {
-    padding: 2.4rem;
+    padding: clamp(1.6rem, 1.8vw, 4rem);
     width: 100vw;
     height: -webkit-fill-available;
 
@@ -228,7 +228,7 @@ div.dimmed {
     transform: translateY(-100%);
 
     &.active {
-      transform: translateY(0%);
+      transform: translateY(6.4rem);
     }
 
     div.nav__titlewrapper {
@@ -249,17 +249,19 @@ div.dimmed {
     transform: translateY(-100%);
 
     &.active {
-      transform: translateY(3.2rem);
+      transform: translateY(6.4rem);
     }
 
     div.about__container {
-      padding: 2.4rem;
+      padding: clamp(1.6rem, 1.8vw, 4rem);
 
       div.intro-portrait {
         width: 100%;
         margin-top: 2.4rem;
 
         figure {
+          width: 75%;
+
           figcaption {
             p {
               margin-top: 0.8rem;
@@ -278,6 +280,22 @@ div.dimmed {
 
         div.intro-contact__row {
           padding-bottom: 2.4rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  section.about {
+    div.about {
+      &__container {
+        div.intro {
+          &-contact {
+            &__grid {
+              grid-template-columns: 1fr;
+            }
+          }
         }
       }
     }

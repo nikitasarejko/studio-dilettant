@@ -1,0 +1,44 @@
+section.page-header {
+  @include padding-n-margin;
+
+  div.page-header {
+    &__content {
+      div.imprint {
+        width: 66.666%;
+        margin: 0 auto;
+        padding: clamp(2.4rem, 6vw, 16rem) 0rem;
+
+        &-credits {
+          display: flex;
+
+          &__col {
+            width: 50%;
+            padding-left: 1.6rem;
+            padding-right: 1.6rem;
+          }
+
+          &__row {
+            padding-bottom: clamp(2.4rem, 3.2vw, 8rem);
+
+            p {
+              padding-bottom: 0.2rem;
+            }
+          }
+        }
+
+        &-disclaimer {
+          padding-left: 1.6rem;
+          padding-right: 1.6rem;
+
+          &__row {
+            padding-bottom: 6.4rem;
+
+            h6 {
+              padding-bottom: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

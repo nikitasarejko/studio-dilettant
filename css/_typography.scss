@@ -329,6 +329,50 @@ section.case-content {
   }
 }
 
+section.page-header {
+  div.page-header {
+    &__content {
+      div.imprint {
+        &-credits {
+          &__col {
+            p {
+              font-size: clamp(2.027rem, 1.8vw, 4.624rem);
+              letter-spacing: -0.025em;
+            }
+          }
+        }
+        &-disclaimer {
+          &__row {
+            p {
+              font-size: clamp(1.424rem, 1.8vw, 2.887rem);
+              line-height: 1.15;
+              letter-spacing: -0.011em;
+
+              a {
+                color: $black;
+
+                &:hover {
+                  text-decoration: none;
+                  color: $black;
+                }
+              }
+            }
+
+            h5 {
+              font-size: clamp(2.027rem, 1.8vw, 4.624rem);
+              letter-spacing: -0.025em;
+            }
+
+            h6 {
+              font-size: clamp(1.602rem, 1.25vw, 2.887rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 footer {
   text-align: center;
 
@@ -361,6 +405,28 @@ footer {
         &:hover {
           opacity: 0.4;
         }
+      }
+    }
+
+    &__bottom {
+      p {
+        font-size: clamp(1.125rem, 1.15vw, 1.266rem);
+        letter-spacing: -0.011em;
+        text-transform: uppercase;
+      }
+
+      h6 {
+        font-size: clamp(1.125rem, 1.15vw, 1.266rem);
+        letter-spacing: -0.011em;
+        text-transform: uppercase;
+      }
+
+      a {
+        font-size: clamp(1.125rem, 1.15vw, 1.266rem);
+        letter-spacing: -0.011em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $grey-regular;
       }
     }
   }

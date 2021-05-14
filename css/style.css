@@ -7,7 +7,7 @@ body {
 div#nav-toggle p {
   font-size: 1.424rem;
   line-height: 1;
-  color: #1d1814;
+  color: #1a1c20;
   transform: rotate(90deg);
   text-transform: uppercase;
   pointer-events: none;
@@ -16,7 +16,7 @@ div#nav-toggle p {
 div#about-toggle p {
   font-size: 1.424rem;
   line-height: 1;
-  color: #1d1814;
+  color: #1a1c20;
   transform: rotate(90deg);
   text-transform: uppercase;
 }
@@ -25,13 +25,13 @@ section.nav h4.title {
   font-size: 2.281rem;
   line-height: 1;
   letter-spacing: -0.011em;
-  color: #1d1814;
+  color: #1a1c20;
   text-transform: uppercase;
 }
 section.nav figure figcaption p {
   font-size: 1.125rem;
   letter-spacing: 0.025rem;
-  color: #1d1814;
+  color: #1a1c20;
   text-transform: uppercase;
 }
 
@@ -39,12 +39,12 @@ section.about div.about__container p {
   font-size: clamp(1.802rem, 1.602vw, 3.247rem);
   letter-spacing: -0.011em;
   line-height: 1.35;
-  color: #1d1814;
+  color: #1a1c20;
 }
 section.about div.about__container div.intro-portrait figure figcaption p {
   font-size: 1.125rem;
   letter-spacing: -0.011em;
-  color: #1d1814;
+  color: #1a1c20;
   text-transform: uppercase;
   letter-spacing: 0.025rem;
 }
@@ -59,7 +59,7 @@ section.about div.about__container div.intro-contact div.intro-contact__row p {
 section.about div.about__container div.intro-contact div.intro-contact__row a {
   font-size: clamp(1.802rem, 1.424vw, 2.566rem);
   letter-spacing: -0.011em;
-  color: #1d1814;
+  color: #1a1c20;
 }
 section.about div.about__container div.intro-contact div.intro-contact__row a:hover {
   text-decoration: none;
@@ -74,7 +74,7 @@ section.home-hero div.home-content__copy h2 {
   font-weight: 300;
   letter-spacing: -0.011em;
   text-transform: uppercase;
-  color: #1d1814;
+  color: #1a1c20;
 }
 section.home-hero div.home-content__copy h2 span.static {
   display: block;
@@ -89,7 +89,7 @@ section.home-hero div.home-content__copy p {
 }
 
 section.capabilities div.capabilities__headline h5 {
-  color: #1d1814;
+  color: #1a1c20;
   font-size: clamp(1.266rem, 1.25vw, 1.424rem);
   font-weight: 500;
   letter-spacing: 0.02rem;
@@ -100,7 +100,7 @@ section.capabilities div.capabilities__row p {
   display: inline-block;
   margin-top: 0;
   margin-bottom: 0;
-  color: #1d1814;
+  color: #1a1c20;
   font-size: clamp(1.802rem, 2.4vw, 9.373rem);
   line-height: 168%;
   font-weight: 300;
@@ -120,7 +120,7 @@ section.capabilities div.capabilities__row p span {
 }
 
 section.featured div.featured__headline h5 {
-  color: #1d1814;
+  color: #1a1c20;
   font-size: clamp(1.266rem, 1.25vw, 1.424rem);
   font-weight: 500;
   letter-spacing: 0.02rem;
@@ -143,7 +143,7 @@ section.featured div.featured__case__content h2 {
 }
 
 section.clients div.clients__headline h5 {
-  color: #1d1814;
+  color: #1a1c20;
   font-size: clamp(1.266rem, 1.25vw, 1.424rem);
   font-weight: 500;
   letter-spacing: 0.02rem;
@@ -157,7 +157,7 @@ section.clients div.clients__left__copy p {
 
 section.case-hero div.case-hero__left__link a {
   text-decoration: none;
-  color: #1d1814;
+  color: #1a1c20;
   font-size: clamp(1.266rem, 1vw, 1.602rem);
   letter-spacing: -0.011em;
 }
@@ -166,7 +166,7 @@ section.case-hero div.case-hero__left__headline h1 {
   font-weight: 300;
   line-height: 1.125;
   letter-spacing: -0.011em;
-  color: #1d1814;
+  color: #1a1c20;
 }
 section.case-hero div.case-hero__left__label p {
   font-size: 1.266rem;
@@ -178,7 +178,7 @@ section.case-hero div.case-hero__left__label p::before {
   content: "";
   width: 1rem;
   height: 1rem;
-  background-color: #1d1814;
+  background-color: #1a1c20;
   border-radius: 0.5rem;
   margin-right: 0.5rem;
   display: inline-block;
@@ -212,6 +212,30 @@ section.case-content div.case-content__container__copy h2 {
   letter-spacing: -0.011em;
 }
 
+section.page-header div.page-header__content div.imprint-credits__col p {
+  font-size: clamp(2.027rem, 1.8vw, 4.624rem);
+  letter-spacing: -0.025em;
+}
+section.page-header div.page-header__content div.imprint-disclaimer__row p {
+  font-size: clamp(1.424rem, 1.8vw, 2.887rem);
+  line-height: 1.15;
+  letter-spacing: -0.011em;
+}
+section.page-header div.page-header__content div.imprint-disclaimer__row p a {
+  color: #1a1c20;
+}
+section.page-header div.page-header__content div.imprint-disclaimer__row p a:hover {
+  text-decoration: none;
+  color: #1a1c20;
+}
+section.page-header div.page-header__content div.imprint-disclaimer__row h5 {
+  font-size: clamp(2.027rem, 1.8vw, 4.624rem);
+  letter-spacing: -0.025em;
+}
+section.page-header div.page-header__content div.imprint-disclaimer__row h6 {
+  font-size: clamp(1.602rem, 1.25vw, 2.887rem);
+}
+
 footer {
   text-align: center;
 }
@@ -235,6 +259,23 @@ footer div.footer__links a {
 }
 footer div.footer__links a:hover {
   opacity: 0.4;
+}
+footer div.footer__bottom p {
+  font-size: clamp(1.125rem, 1.15vw, 1.266rem);
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+}
+footer div.footer__bottom h6 {
+  font-size: clamp(1.125rem, 1.15vw, 1.266rem);
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+}
+footer div.footer__bottom a {
+  font-size: clamp(1.125rem, 1.15vw, 1.266rem);
+  letter-spacing: -0.011em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #e2ddd7;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -262,7 +303,7 @@ div#nav-toggle {
   padding-top: 4rem;
   width: 4.8rem;
   background-color: white;
-  border-right: 1px solid #1d1814;
+  border-right: 1px solid #1a1c20;
   cursor: pointer;
   transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
   z-index: 778;
@@ -282,7 +323,7 @@ div#about-toggle {
   width: 4.8rem;
   padding-top: 4rem;
   background-color: white;
-  border-right: 1px solid #1d1814;
+  border-right: 1px solid #1a1c20;
   cursor: pointer;
   transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
   z-index: 666;
@@ -392,7 +433,7 @@ section.about div.about__container div.intro-contact div.intro-contact__row a {
 }
 
 div.dimmed {
-  background-color: #1d1814;
+  background-color: #1a1c20;
   opacity: 0;
   pointer-events: none;
   width: 100vw;
@@ -412,14 +453,14 @@ div.dimmed {
     width: 100%;
     left: 0;
     border-right: none;
-    border-bottom: 1px solid #1d1814;
+    border-bottom: 1px solid #1a1c20;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 888;
   }
   div#nav-toggle.active {
-    transform: translateY(calc(100vh - 6.4rem));
+    transform: translateY(0);
   }
 
   div#about-toggle {
@@ -429,25 +470,25 @@ div.dimmed {
     width: 100%;
     padding: 0.8rem;
     border-right: none;
-    border-bottom: 1px solid #1d1814;
+    border-bottom: 1px solid #1a1c20;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 888;
   }
   div#about-toggle.active {
-    transform: translateY(calc(100vh - 6.4rem));
+    transform: translateY(0);
   }
 
   section.nav {
-    padding: 2.4rem;
+    padding: clamp(1.6rem, 1.8vw, 4rem);
     width: 100vw;
     height: -webkit-fill-available;
     z-index: 777;
     transform: translateY(-100%);
   }
   section.nav.active {
-    transform: translateY(0%);
+    transform: translateY(6.4rem);
   }
   section.nav div.nav__titlewrapper {
     height: auto;
@@ -464,14 +505,17 @@ div.dimmed {
     transform: translateY(-100%);
   }
   section.about.active {
-    transform: translateY(3.2rem);
+    transform: translateY(6.4rem);
   }
   section.about div.about__container {
-    padding: 2.4rem;
+    padding: clamp(1.6rem, 1.8vw, 4rem);
   }
   section.about div.about__container div.intro-portrait {
     width: 100%;
     margin-top: 2.4rem;
+  }
+  section.about div.about__container div.intro-portrait figure {
+    width: 75%;
   }
   section.about div.about__container div.intro-portrait figure figcaption p {
     margin-top: 0.8rem;
@@ -485,6 +529,11 @@ div.dimmed {
   }
   section.about div.about__container div.intro-contact div.intro-contact__row {
     padding-bottom: 2.4rem;
+  }
+}
+@media only screen and (max-width: 540px) {
+  section.about div.about__container div.intro-contact__grid {
+    grid-template-columns: 1fr;
   }
 }
 div.mini-logo {
@@ -555,7 +604,7 @@ section.home-hero div.home-content__img img {
 section.capabilities {
   position: relative;
   height: 100%;
-  color: #1d1814;
+  color: #1a1c20;
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
 }
@@ -567,10 +616,10 @@ section.capabilities {
 }
 section.capabilities div.capabilities__inner {
   display: flex;
-  border-top: 1px solid #1d1814;
-  border-bottom: 1px solid #1d1814;
+  border-top: 1px solid #1a1c20;
+  border-bottom: 1px solid #1a1c20;
   margin: clamp(0.8rem, 2.8vw, 4.8rem);
-  padding: clamp(0.8rem, 2.8vw, 4.8rem) 0rem;
+  padding: clamp(1.6rem, 2.8vw, 4.8rem) 0rem;
 }
 section.capabilities div.capabilities__wrapper.wrapper-services {
   margin-left: 8rem;
@@ -603,7 +652,7 @@ section.capabilities div.capabilities__left, section.capabilities div.capabiliti
   width: 50%;
 }
 section.capabilities div.capabilities__right {
-  border-left: 1px solid #1d1814;
+  border-left: 1px solid #1a1c20;
 }
 
 section.featured {
@@ -612,12 +661,12 @@ section.featured {
   padding: 8rem 0rem;
 }
 section.featured div.featured__inner {
-  padding-top: clamp(0.8rem, 1.8vw, 4rem);
-  border-top: 1px solid #1d1814;
+  padding-top: clamp(1.6rem, 1.8vw, 4rem);
+  border-top: 1px solid #1a1c20;
   margin: clamp(0.8rem, 2.8vw, 4.8rem);
 }
 section.featured div.featured__headline {
-  margin-bottom: clamp(0.8rem, 1.8vw, 4rem);
+  padding-bottom: clamp(1.6rem, 1.8vw, 4rem);
   overflow: hidden;
 }
 section.featured div.featured__case__img {
@@ -715,12 +764,12 @@ section.clients {
   padding: 8rem 0rem;
 }
 section.clients div.clients__inner {
-  padding-top: clamp(0.8rem, 1.8vw, 4rem);
-  border-top: 1px solid #1d1814;
+  padding-top: clamp(1.6rem, 1.8vw, 4rem);
+  border-top: 1px solid #1a1c20;
   margin: clamp(0.8rem, 2.8vw, 4.8rem);
 }
 section.clients div.clients__headline {
-  margin-bottom: clamp(0.8rem, 1.8vw, 4rem);
+  padding-bottom: clamp(1.6rem, 1.8vw, 4rem);
   overflow: hidden;
 }
 section.clients div.clients__content {
@@ -754,7 +803,7 @@ footer {
   bottom: 0;
   right: 0;
   height: 66.667vh;
-  background-color: #1d1814;
+  background-color: #1a1c20;
   color: #e2ddd7;
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
@@ -790,10 +839,16 @@ footer div.footer__links a {
   margin-bottom: 0.8rem;
 }
 footer div.footer__bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
   width: 100%;
+}
+footer div.footer__bottom p {
+  justify-self: start;
+}
+footer div.footer__bottom a {
+  justify-self: end;
 }
 
 div.swipe {
@@ -818,6 +873,12 @@ div.swipe-3 {
 }
 
 @media only screen and (max-width: 1024px) {
+  div.mini-logo {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+
   section.home-hero {
     min-height: unset;
     margin-top: 6.4rem;
@@ -872,7 +933,7 @@ div.swipe-3 {
   section.capabilities div.capabilities__right {
     border-left: none;
     width: 100%;
-    border-top: 1px solid #1d1814;
+    border-top: 1px solid #1a1c20;
     margin-top: 4rem;
     padding-top: 1.6rem;
   }
@@ -1067,6 +1128,48 @@ section.case-content div.case-content__container__img div.half-width-image img.p
     height: 50%;
   }
 }
+section.page-header {
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding: clamp(0.8rem, 2.8vw, 4.8rem);
+}
+@media only screen and (max-width: 1024px) {
+  section.page-header {
+    width: 100%;
+    margin-left: 0;
+    padding: clamp(0.8rem, 2.8vw, 4.8rem);
+  }
+}
+section.page-header div.page-header__content div.imprint {
+  width: 66.666%;
+  margin: 0 auto;
+  padding: clamp(2.4rem, 6vw, 16rem) 0rem;
+}
+section.page-header div.page-header__content div.imprint-credits {
+  display: flex;
+}
+section.page-header div.page-header__content div.imprint-credits__col {
+  width: 50%;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+section.page-header div.page-header__content div.imprint-credits__row {
+  padding-bottom: clamp(2.4rem, 3.2vw, 8rem);
+}
+section.page-header div.page-header__content div.imprint-credits__row p {
+  padding-bottom: 0.2rem;
+}
+section.page-header div.page-header__content div.imprint-disclaimer {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+section.page-header div.page-header__content div.imprint-disclaimer__row {
+  padding-bottom: 6.4rem;
+}
+section.page-header div.page-header__content div.imprint-disclaimer__row h6 {
+  padding-bottom: 1.6rem;
+}
+
 html {
   font-family: "Inter", sans-serif;
 }
