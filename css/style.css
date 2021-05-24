@@ -143,6 +143,15 @@ section.featured div.featured__case__content h2 {
   color: white;
   text-align: center;
 }
+section.featured div.featured__case__content p {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.011em;
+  text-transform: uppercase;
+  text-align: center;
+}
 
 section.clients div.clients__headline h5 {
   color: #1a1c20;
@@ -805,13 +814,18 @@ section.featured div.featured__case__content h2 span.word {
   display: inline-flex;
   transform: translateY(100%);
 }
-section.featured div.featured__case__info p {
+section.featured div.featured__case__info {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
-section.featured div.featured__case__info p span.word {
-  opacity: 0;
+section.featured div.featured__case__info p {
+  overflow: hidden;
+  margin-bottom: 0.4rem;
   display: inline-flex;
-  transform: translateY(100%);
+  flex-direction: column;
+  transform: translate(0%, 300%);
 }
 
 section.clients {

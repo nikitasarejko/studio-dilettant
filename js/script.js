@@ -65,11 +65,10 @@ function hoverImageInit() {
     target: cursorCopy,
     by: "lines",
   });
-  const cursorInfo = document.querySelectorAll("div.featured__case__info p");
-  const cursorInfoResults = Splitting({
-    target: cursorInfo,
-    by: "chars",
-  });
+
+  const cursorCopyInfo = document.querySelectorAll(
+    "div.featured__case__info p"
+  );
 
   const cursorImage = document.querySelector(
     "div.featured__case__img figure img"
@@ -80,7 +79,7 @@ function hoverImageInit() {
   let currentY = 0;
   let aimX = 0;
   let aimY = 0;
-  let speed = 0.15;
+  let speed = 0.1;
 
   const animateCursor = function (e) {
     currentX += (aimX - currentX) * speed;
@@ -108,7 +107,11 @@ function hoverImageInit() {
     cursorImageTl
       .to(cursorImage, { scale: 1.125, delay: -1 }, 0)
       .to(cursorOverlay, { opacity: 0.6 }, 1)
-      .to(cursorInfoResults[0].words, { opacity: 1, y: "0%", stagger: 0.25 }, 1)
+      .to(
+        cursorCopyInfo,
+        { y: "0%", opacity: 1, delay: 0.2, stagger: 0.125 },
+        1
+      )
       .to(
         cursorCopyResults[0].words,
         { opacity: 1, y: "0%", delay: 0.2, stagger: 0.075 },
@@ -138,10 +141,16 @@ function hoverImageInit() {
       .to(cursorImage, { scale: 1, delay: -1 }, 0)
       .to(cursorOverlay, { opacity: 0 }, 1)
       .to(
+        cursorCopyInfo,
+        { y: "-300%", opacity: 0, delay: 0.2, stagger: 0.125 },
+        1
+      )
+      .to(
         cursorCopyResults[0].words,
         { opacity: 0, y: "-100%", delay: 0.2, stagger: 0.075 },
         1
       )
+      .set(cursorCopyInfo, { y: "300%", opacity: 0 })
       .set(cursorCopyResults[0].words, { opacity: 0, y: "100%" });
   });
 }

@@ -278,14 +278,17 @@ section.featured {
       }
 
       &__info {
+        margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
         p {
           overflow: hidden;
-
-          span.word {
-            opacity: 0;
-            display: inline-flex;
-            transform: translateY(100%);
-          }
+          margin-bottom: 0.4rem;
+          display: inline-flex;
+          flex-direction: column;
+          transform: translate(0%, 300%);
         }
       }
     }
