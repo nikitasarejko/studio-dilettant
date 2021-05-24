@@ -1,8 +1,74 @@
+function shaderInit() {
+  const frag = `
+  precision highp float;
+  
+  varying vec2 v_texcoord;
+  
+  uniform vec2 u_resolution;
+  uniform float u_time;
+  uniform sampler2D displacement;
+  
+  vec4 rgb(float r, float g, float b) {
+    return vec4(r / 255.0, g / 255.0, b / 255.0, 1.0);
+  }
+  
+  vec4 makeColor(vec2 uv, vec4 tl, vec4 tr, vec4 bl, vec4 br) {
+    float size = 0.1;
+    float speed = 0.05;
+  
+    vec2 movement = vec2(u_time * speed);
+  
+    vec2 point = fract(
+      uv * size + movement
+    );
+  
+    vec4 dispColor = texture2D(
+      displacement, 
+      point
+    );
+  
+    float dispX = mix(-0.5, 0.5, dispColor.r);
+    float dispY = mix(-0.5, 0.5, dispColor.r);
+  
+    return mix(
+      mix(bl, br, uv.x + dispX),
+      mix(tl, tr, uv.x - dispX),
+      uv.y + dispY
+    );
+  }
+  
+  void main(){
+    vec2 uv = v_texcoord;
+  
+    vec4 color = makeColor(
+      uv, 
+      rgb(226.0, 221.0, 215.0),
+      rgb(199.0, 189.0, 179.0),
+      rgb(219.0, 213.0, 201.0),
+      rgb(218.0, 218.0, 252.0)
+    );
+  
+    gl_FragColor = color;
+  }
+  `;
+
+  const canvas = document.querySelector("canvas");
+  const sandbox = new GlslCanvas(canvas);
+
+  sandbox.setUniform("displacement", "../img/displacement1.jpeg");
+  sandbox.load(frag);
+}
+
 function hoverImageInit() {
   const cursorCopy = document.querySelector("div.featured__case__content h2");
   const cursorCopyResults = Splitting({
     target: cursorCopy,
     by: "lines",
+  });
+  const cursorInfo = document.querySelectorAll("div.featured__case__info p");
+  const cursorInfoResults = Splitting({
+    target: cursorInfo,
+    by: "chars",
   });
 
   const cursorImage = document.querySelector(
@@ -14,7 +80,7 @@ function hoverImageInit() {
   let currentY = 0;
   let aimX = 0;
   let aimY = 0;
-  let speed = 0.2;
+  let speed = 0.15;
 
   const animateCursor = function (e) {
     currentX += (aimX - currentX) * speed;
@@ -42,6 +108,7 @@ function hoverImageInit() {
     cursorImageTl
       .to(cursorImage, { scale: 1.125, delay: -1 }, 0)
       .to(cursorOverlay, { opacity: 0.6 }, 1)
+      .to(cursorInfoResults[0].words, { opacity: 1, y: "0%", stagger: 0.25 }, 1)
       .to(
         cursorCopyResults[0].words,
         { opacity: 1, y: "0%", delay: 0.2, stagger: 0.075 },
@@ -105,11 +172,16 @@ function featuredImageReveal() {
   const tl = new gsap.timeline({
     scrollTrigger: {
       trigger: headline,
-      start: "top bottom",
+      start: "center bottom",
     },
   });
 
-  tl.from(image, { y: "15%", opacity: 0 });
+  tl.to(image, {
+    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+    duration: 3,
+    delay: 1,
+    ease: "SlowMo.ease.config(0.7, 0.7, false)",
+  });
 }
 
 function runInit() {
@@ -133,20 +205,44 @@ function runInit() {
 
     heroTl
       .set(heroCopyHolder, { opacity: 0, y: "24px" })
-      .to(heroCopyHolder, { opacity: 1, y: "0px", duration: 0.5 })
-      .to(heroCopyHolder, { opacity: 0, duration: 0.5, delay: 2.5 })
+      .to(heroCopyHolder, { opacity: 1, y: "0px", duration: 1 })
+      .to(heroCopyHolder, { opacity: 0, duration: 1, delay: 2.5 })
       .set(heroCopyHolder, {
         y: "24px",
         text: "lorem ipsum dolor sit amet vedibum lol.",
       })
-      .to(heroCopyHolder, { opacity: 1, y: "0px", duration: 0.5 })
-      .to(heroCopyHolder, { opacity: 0, duration: 0.5, delay: 2.5 })
+      .to(heroCopyHolder, { opacity: 1, y: "0px", duration: 1 })
+      .to(heroCopyHolder, { opacity: 0, duration: 1, delay: 2.5 })
       .set(heroCopyHolder, {
         y: "24px",
         text: "some other mighty powerful text.",
       })
-      .to(heroCopyHolder, { opacity: 1, y: "0px", duration: 0.5 })
-      .to(heroCopyHolder, { opacity: 0, duration: 0.5, delay: 2.5 });
+      .to(heroCopyHolder, { opacity: 1, y: "0px", duration: 1 })
+      .to(heroCopyHolder, { opacity: 0, duration: 1, delay: 2.5 });
+  };
+
+  const heroImageSwitch = function () {
+    const imgs = gsap.utils.toArray("div.home-content__img img");
+    const next = 4.5; // time to change
+    const fade = 1.5; // fade time
+
+    //only for the first
+    gsap.set(imgs[0], { autoAlpha: 1 });
+
+    // ====================
+    function crossfade() {
+      const action = gsap
+        .timeline()
+        .to(imgs[0], { autoAlpha: 0, duration: fade })
+        .to(imgs[1], { autoAlpha: 1, duration: fade }, 0);
+
+      imgs.push(imgs.shift());
+      // start endless run
+      gsap.delayedCall(next, crossfade);
+    }
+
+    // start the crossfade after next = 4.5 sec
+    gsap.delayedCall(0, crossfade);
   };
 
   const openNav = function (e) {
@@ -478,6 +574,7 @@ function runInit() {
 
   // RUN FUNCTIONS
   heroCopySwitch();
+  heroImageSwitch();
   footerReveal();
   logoLargeScroll();
   logoSmallScroll();
@@ -622,6 +719,7 @@ barba.init({
       namespace: "home",
       beforeEnter() {
         hoverImageInit();
+        shaderInit();
       },
     },
     {

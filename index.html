@@ -171,7 +171,9 @@
               </p>
             </div>
             <div class="home-content__img">
-              <img src="./img/hero-001.png" alt="Hero Image" />
+              <img src="./img/hero-001.png" alt="Hero Image Slide 1" />
+              <img src="./img/hero-002.png" alt="Hero Image Slide 2" />
+              <img src="./img/hero-003.png" alt="Hero Image Slide 3" />
             </div>
           </div>
         </section>
@@ -235,7 +237,7 @@
               <h5>Explore our latest case studies</h5>
             </div>
             <div class="featured__case">
-              <div class="featured__case__img__hover">View Case Study ↪</div>
+              <div class="featured__case__img__hover">View<br />Case</div>
               <div class="featured__case__img">
                 <a href="./case/example.html">
                   <figure>
@@ -244,6 +246,10 @@
                 </a>
                 <div class="featured__case__overlay"></div>
                 <div class="featured__case__content">
+                  <div class="featured__case__info">
+                    <p>Berlin</p>
+                    <p>2020</p>
+                  </div>
                   <h2>
                     Entwicklung einer Kleinserie für Berliner Couch Manufaktur
                   </h2>
@@ -304,6 +310,31 @@
             </div>
           </div>
         </section>
+        <section class="signup">
+          <div class="signup__inner">
+            <div class="signup__content">
+              <canvas style="background-color: rgba(1, 1, 1, 0)"></canvas>
+              <div class="signup__form">
+                <h2>Stay inside the loop</h2>
+                <p>
+                  Join our newsletter to be notified of when pre-release tickets
+                  for our first ever world tour go on sale.
+                </p>
+                <form action="#" method="post" id="subForm" class="sign-up">
+                  <input
+                    placeholder="Enter your email"
+                    id="fieldEmail"
+                    name="cm-vtikrl-vtikrl"
+                    type="email"
+                    required=""
+                    class="email-input"
+                  />
+                  <input type="submit" value="Submit" class="submit" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer>
@@ -343,6 +374,10 @@
     <div class="swipe swipe-3"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+    <script
+      type="text/javascript"
+      src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"
+    ></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"

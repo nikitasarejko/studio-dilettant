@@ -67,7 +67,7 @@ section.about div.about__container div.intro-contact div.intro-contact__row a:ho
 }
 
 section.home-hero div.home-content__copy {
-  max-width: 50%;
+  max-width: 66.666%;
 }
 section.home-hero div.home-content__copy h2 {
   font-size: clamp(1.802rem, 4vw, 9.373rem);
@@ -127,11 +127,13 @@ section.featured div.featured__headline h5 {
   text-transform: uppercase;
 }
 section.featured div.featured__case__img__hover {
-  color: white;
-  font-size: clamp(1.266rem, 1.25vw, 1.602rem);
-  font-weight: 400;
+  color: #1a1c20;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.15;
   letter-spacing: 0.011em;
   text-transform: uppercase;
+  text-align: center;
 }
 section.featured div.featured__case__content h2 {
   font-size: clamp(1.802rem, 2.4vw, 9.373rem);
@@ -153,6 +155,30 @@ section.clients div.clients__left__copy p {
   font-size: clamp(1.602rem, 1.6vw, 2.027rem);
   letter-spacing: -0.011em;
   line-height: 1.35;
+}
+
+section.signup div.signup__headline h5 {
+  color: #1a1c20;
+  font-size: clamp(1.266rem, 1.25vw, 1.424rem);
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+}
+section.signup div.signup__form h2 {
+  font-size: clamp(1.802rem, 2.7vw, 4.624rem);
+  letter-spacing: -0.022em;
+  font-weight: 300;
+  text-align: center;
+}
+section.signup div.signup__form p {
+  font-size: clamp(1.602rem, 1.6vw, 2.027rem);
+  letter-spacing: -0.011em;
+  line-height: 1.35;
+  text-align: center;
+}
+section.signup div.signup__form form input {
+  font-size: clamp(1.602rem, 1.6vw, 2.027rem);
+  letter-spacing: -0.011em;
 }
 
 section.case-hero div.case-hero__left__link a {
@@ -555,12 +581,11 @@ div.mini-logo img {
 
 section.home-hero {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
   padding: clamp(0.8rem, 2.8vw, 4.8rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 @media only screen and (max-width: 1024px) {
   section.home-hero {
@@ -571,6 +596,7 @@ section.home-hero {
 }
 section.home-hero div.home-logo {
   width: 100%;
+  grid-column: 1/-1;
 }
 section.home-hero div.home-logo svg {
   width: 50%;
@@ -582,11 +608,12 @@ section.home-hero div.home-content {
   padding-top: 4rem;
   background-color: white;
   border-top: 1px solid #14302b;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   z-index: 1;
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1/-1;
+  align-items: flex-end;
 }
 section.home-hero div.home-content__copy {
   overflow: hidden;
@@ -596,9 +623,19 @@ section.home-hero div.home-content__copy {
 section.home-hero div.home-content__copy h2 span.flexible {
   display: inline-block;
 }
+section.home-hero div.home-content__img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 66.666vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 section.home-hero div.home-content__img img {
   height: 66.666vh;
   object-fit: cover;
+  position: absolute;
 }
 
 section.capabilities {
@@ -660,6 +697,12 @@ section.featured {
   margin-left: 9.6rem;
   padding: 8rem 0rem;
 }
+@media only screen and (max-width: 1024px) {
+  section.featured {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 section.featured div.featured__inner {
   padding-top: clamp(1.6rem, 1.8vw, 4rem);
   border-top: 1px solid #1a1c20;
@@ -677,24 +720,28 @@ section.featured div.featured__case__img__hover {
   top: 0;
   left: 0;
   opacity: 0;
-  transform: translate(-50%, -50%);
-  transition: opacity 1s ease;
+  transform: translate(-50%, -50%) scale(0.1);
+  transition: opacity 0.5s ease, transform 0.3s ease;
   pointer-events: none;
-  display: inline-block;
+  height: 8rem;
+  width: 8rem;
+  background-color: #c7bdb3;
+  border-radius: 4rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   mix-blend-mode: difference;
   will-change: top, left;
   z-index: 5;
 }
 section.featured div.featured__case__img__hover.show {
   opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 section.featured div.featured__case__img figure {
   overflow: hidden;
   width: 100%;
   max-height: 82.5vh;
-}
-section.featured div.featured__case__img figure:hover {
-  cursor: none;
 }
 section.featured div.featured__case__img figure img {
   transition: transform 1s ease-in-out;
@@ -703,6 +750,7 @@ section.featured div.featured__case__img figure img {
   object-fit: cover;
   object-position: center;
   position: relative;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }
 section.featured div.featured__case__img figure figcaption {
   position: absolute;
@@ -757,11 +805,25 @@ section.featured div.featured__case__content h2 span.word {
   display: inline-flex;
   transform: translateY(100%);
 }
+section.featured div.featured__case__info p {
+  overflow: hidden;
+}
+section.featured div.featured__case__info p span.word {
+  opacity: 0;
+  display: inline-flex;
+  transform: translateY(100%);
+}
 
 section.clients {
   width: calc(100vw - 9.6rem);
   margin-left: 9.6rem;
   padding: 8rem 0rem;
+}
+@media only screen and (max-width: 1024px) {
+  section.clients {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 section.clients div.clients__inner {
   padding-top: clamp(1.6rem, 1.8vw, 4rem);
@@ -796,6 +858,78 @@ section.clients div.clients__right__grid__wrapper {
 section.clients div.clients__right__grid__wrapper img {
   max-width: 12rem;
   filter: grayscale(1);
+}
+
+section.signup {
+  width: calc(100vw - 9.6rem);
+  margin-left: 9.6rem;
+  padding-bottom: clamp(0.8rem, 2.8vw, 4.8rem);
+}
+@media only screen and (max-width: 1024px) {
+  section.signup {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+section.signup div.signup__inner {
+  padding-top: clamp(1.6rem, 1.8vw, 4rem);
+  border-top: 1px solid #1a1c20;
+  margin: clamp(0.8rem, 2.8vw, 4.8rem);
+}
+section.signup div.signup__headline {
+  padding-bottom: clamp(1.6rem, 1.8vw, 4rem);
+  overflow: hidden;
+}
+section.signup div.signup__content {
+  position: relative;
+  background-color: #e2ddd7;
+  padding: clamp(8rem, 25vw, 32rem) 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.signup div.signup__content canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+section.signup div.signup__form {
+  max-width: 64rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+section.signup div.signup__form h2 {
+  margin-bottom: 4rem;
+}
+section.signup div.signup__form p {
+  margin-bottom: 6.4rem;
+}
+section.signup div.signup__form form {
+  width: 100%;
+  display: flex;
+}
+section.signup div.signup__form form input.email-input {
+  flex: 1;
+  background: white;
+  border: 1px solid #1a1c20;
+  padding: 1.6rem;
+}
+section.signup div.signup__form form input.email-input:focus {
+  outline: none;
+  border: 1px solid #c7bdb3;
+}
+section.signup div.signup__form form input.submit {
+  margin-left: 0.8rem;
+  background: #1a1c20;
+  color: #e2ddd7;
+  border: none;
+  padding: 1.6rem 4rem;
 }
 
 footer {
@@ -882,6 +1016,7 @@ div.swipe-3 {
   section.home-hero {
     min-height: unset;
     margin-top: 6.4rem;
+    padding-top: 1.6rem;
   }
   section.home-hero div.home-content__img img {
     height: 50vh;
@@ -916,6 +1051,7 @@ div.swipe-3 {
   }
   section.home-hero div.home-content {
     padding-top: 2.4rem;
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
