@@ -42,3 +42,31 @@ section.page-header {
     }
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  section.page-header {
+    margin-top: 8rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  section.page-header {
+    div.page-header {
+      &__content {
+        div.imprint {
+          width: 100%;
+
+          &-credits {
+            flex-direction: column;
+          }
+
+          &-disclaimer {
+            &__row {
+              padding-bottom: 4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

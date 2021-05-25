@@ -241,7 +241,7 @@ section.case-content div.case-content__container__copy p {
   line-height: 1.35;
 }
 section.case-content div.case-content__container__copy h2 {
-  font-size: clamp(1.802rem, 3vw, 7.406rem);
+  font-size: clamp(2.281rem, 3.2vw, 7.406rem);
   font-weight: 300;
   line-height: 1.125;
   letter-spacing: -0.011em;
@@ -1222,7 +1222,7 @@ section.quote div.quote__inner {
   border-bottom: 1px solid #14302b;
 }
 section.quote div.quote__info {
-  margin-top: clamp(4rem, 6vw, 12rem);
+  margin-top: clamp(2.4rem, 4.8vw, 12rem);
 }
 section.quote div.quote__wrapper {
   overflow: hidden;
@@ -1246,8 +1246,9 @@ section.case-content div.case-content__container {
 }
 section.case-content div.case-content__container__copy {
   max-width: 80rem;
-  margin: 0 auto;
-  padding: 12rem 1.6rem;
+  margin: clamp(2.4rem, 4vw, 12rem) auto;
+  padding: 0 1.6rem;
+  overflow: hidden;
 }
 section.case-content div.case-content__container__img {
   position: relative;
@@ -1329,6 +1330,18 @@ section.case-content div.case-content__container__img div.half-width-image img.p
   section.quote {
     margin-top: 4rem;
   }
+
+  section.case-content div.case-content__container {
+    padding: clamp(0.8rem, 2.8vw, 4.8rem);
+  }
+}
+@media only screen and (max-width: 540px) {
+  section.case-content div.case-content__container__img {
+    flex-direction: column;
+  }
+  section.case-content div.case-content__container__img div.half-width-image {
+    width: 100%;
+  }
 }
 section.page-header {
   width: calc(100vw - 9.6rem);
@@ -1372,6 +1385,22 @@ section.page-header div.page-header__content div.imprint-disclaimer__row h6 {
   padding-bottom: 1.6rem;
 }
 
+@media only screen and (max-width: 1024px) {
+  section.page-header {
+    margin-top: 8rem;
+  }
+}
+@media only screen and (max-width: 540px) {
+  section.page-header div.page-header__content div.imprint {
+    width: 100%;
+  }
+  section.page-header div.page-header__content div.imprint-credits {
+    flex-direction: column;
+  }
+  section.page-header div.page-header__content div.imprint-disclaimer__row {
+    padding-bottom: 4rem;
+  }
+}
 html {
   font-family: "Inter", sans-serif;
 }

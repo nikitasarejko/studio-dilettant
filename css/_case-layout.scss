@@ -83,7 +83,7 @@ section.quote {
     }
 
     &__info {
-      margin-top: clamp(4rem, 6vw, 12rem);
+      margin-top: clamp(2.4rem, 4.8vw, 12rem);
     }
 
     &__wrapper {
@@ -104,8 +104,9 @@ section.case-content {
 
       &__copy {
         max-width: 80rem;
-        margin: 0 auto;
-        padding: 12rem 1.6rem;
+        margin: clamp(2.4rem, 4vw, 12rem) auto;
+        padding: 0 1.6rem;
+        overflow: hidden;
       }
 
       &__img {
@@ -207,5 +208,33 @@ section.case-content {
 
   section.quote {
     margin-top: 4rem;
+  }
+
+  section.case-content {
+    div.case {
+      &-content {
+        &__container {
+          padding: clamp(0.8rem, 2.8vw, 4.8rem);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  section.case-content {
+    div.case {
+      &-content {
+        &__container {
+          &__img {
+            flex-direction: column;
+
+            div.half-width-image {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -566,6 +566,29 @@ function runInit() {
     });
   };
 
+  const revealCaseCopy = function () {
+    let revealContainers = document.querySelectorAll(
+      "div.case-content__container__copy"
+    );
+
+    revealContainers.forEach((container) => {
+      let copy = container.querySelectorAll("p, h2");
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          toggleActions: "restart none none reset",
+        },
+      });
+
+      tl.from(copy, 1.5, {
+        yPercent: 100,
+        opacity: 0,
+        delay: -1.5,
+        ease: Power4.out,
+      });
+    });
+  };
+
   const clientsReveal = function () {
     const items = document.querySelectorAll(
       "div.clients__left__copy p, section.clients div.clients__right__grid img"
@@ -582,16 +605,23 @@ function runInit() {
   };
 
   // RUN FUNCTIONS
-  heroCopySwitch();
-  heroImageSwitch();
-  footerReveal();
   logoLargeScroll();
   logoSmallScroll();
+
+  heroCopySwitch();
+  heroImageSwitch();
+
+  capabilitiesReveal();
+
+  featuredImageReveal();
+
+  clientsReveal();
+
+  footerReveal();
+
   caseHeroImgScroll();
   revealCaseImages();
-  featuredImageReveal();
-  capabilitiesReveal();
-  clientsReveal();
+  revealCaseCopy();
 
   // EVENTLISTENER
   navToggle.addEventListener("click", openNav);
