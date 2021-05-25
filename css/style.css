@@ -1250,10 +1250,16 @@ section.case-content div.case-content__container__copy {
   padding: 12rem 1.6rem;
 }
 section.case-content div.case-content__container__img {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 4rem;
+}
+section.case-content div.case-content__container__img div.reveal {
+  visibility: hidden;
+  position: relative;
+  overflow: hidden;
 }
 section.case-content div.case-content__container__img div.full-width-image {
   width: 100%;
@@ -1265,6 +1271,7 @@ section.case-content div.case-content__container__img div.full-width-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform-origin: left;
 }
 section.case-content div.case-content__container__img div.full-width-image img.pa-sm {
   padding: 0.8rem;
@@ -1285,6 +1292,7 @@ section.case-content div.case-content__container__img div.half-width-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform-origin: left;
 }
 section.case-content div.case-content__container__img div.half-width-image img.pa-sm {
   padding: 0.8rem;
