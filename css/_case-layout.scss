@@ -14,7 +14,7 @@ section.case-hero {
 
     &__left {
       &__inner {
-        padding: 4rem;
+        padding: clamp(0.8rem, 2.8vw, 4.8rem);
         height: 100%;
 
         display: flex;
@@ -173,6 +173,7 @@ section.case-content {
   section.case-hero {
     flex-direction: column-reverse;
     height: auto;
+    margin-top: 8rem;
 
     div.case-hero {
       &__left {
@@ -182,6 +183,11 @@ section.case-content {
         &__headline {
           margin-bottom: 4rem;
         }
+
+        &__link {
+          padding-top: 1.6rem;
+          padding-bottom: 0.8rem;
+        }
       }
 
       &__right {
@@ -189,5 +195,9 @@ section.case-content {
         height: 50%;
       }
     }
+  }
+
+  section.quote {
+    margin-top: 4rem;
   }
 }

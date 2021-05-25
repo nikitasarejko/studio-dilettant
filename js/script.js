@@ -676,7 +676,7 @@ barba.init({
         const heroContentCopy = document.querySelector(
           "section.home-hero div.home-content__copy"
         );
-        const heroContentImg = document.querySelector(
+        const heroContentImg = document.querySelectorAll(
           "section.home-hero div.home-content__img img"
         );
 
@@ -714,6 +714,7 @@ barba.init({
                 clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
                 duration: 2,
                 delay: 0.4,
+                stagger: 0.5,
               },
               1
             )
