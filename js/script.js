@@ -277,7 +277,7 @@ function runInit() {
     const navigationTl = new gsap.timeline({
       defaults: {
         duration: 1,
-        ease: "power4.easeOut",
+        ease: "SlowMo.ease.config(0.7, 0.7, false)",
       },
     });
 
@@ -323,7 +323,7 @@ function runInit() {
       aboutToggleText.innerText = "About";
 
       navigationTl
-        .to(navHeadline, { y: "0%", delay: 0.25 }, 0)
+        .to(navHeadline, { y: "0%", delay: 0.4 }, 0)
         .to(
           portfolioLinks,
           {
@@ -353,7 +353,7 @@ function runInit() {
     const aboutTl = gsap.timeline({
       defaults: {
         duration: 1,
-        ease: "power4.easeOut",
+        ease: "SlowMo.ease.config(0.7, 0.7, false)",
       },
     });
     if (

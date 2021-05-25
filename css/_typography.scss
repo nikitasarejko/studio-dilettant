@@ -27,11 +27,10 @@ div#about-toggle {
 section.nav {
   h4 {
     &.title {
-      font-size: 2.281rem;
-      line-height: 1;
+      font-size: clamp(1.802rem, 1.602vw, 3.247rem);
       letter-spacing: -0.011em;
+      line-height: 1.35;
       color: $black;
-      text-transform: uppercase;
     }
   }
 
@@ -39,7 +38,8 @@ section.nav {
     figcaption {
       p {
         font-size: 1.125rem;
-        letter-spacing: 0.025rem;
+        letter-spacing: -0.011em;
+        font-weight: 500;
         color: $black;
         text-transform: uppercase;
       }
