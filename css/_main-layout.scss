@@ -22,9 +22,6 @@ section.home-hero {
   min-height: 100vh;
   @include padding-n-margin;
 
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -47,9 +44,6 @@ section.home-hero {
     z-index: 1;
     position: relative;
 
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: flex-end;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column: 1 / -1;
@@ -571,6 +565,11 @@ div.swipe {
           margin-right: 0;
           padding-bottom: 2.4rem;
         }
+
+        &__img {
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }
@@ -624,5 +623,9 @@ div.swipe {
         }
       }
     }
+  }
+
+  footer {
+    position: relative;
   }
 }

@@ -38,3 +38,9 @@ main {
   background-color: white;
   margin-bottom: 66.666vh;
 }
+
+@media only screen and (max-width: 540px) {
+  main {
+    margin-bottom: 0;
+  }
+}

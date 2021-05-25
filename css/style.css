@@ -85,7 +85,7 @@ section.home-hero div.home-content__copy h2 span.flexible {
 section.home-hero div.home-content__copy p {
   font-size: clamp(1.424rem, 1.6vw, 2.887rem);
   letter-spacing: -0.011em;
-  margin-top: clamp(0.8rem, 2.4vw, 6.4rem);
+  margin-top: clamp(1.6rem, 2.4vw, 6.4rem);
 }
 
 section.capabilities div.capabilities__headline h5 {
@@ -1073,6 +1073,10 @@ div.swipe-3 {
     margin-right: 0;
     padding-bottom: 2.4rem;
   }
+  section.home-hero div.home-content__img {
+    justify-content: center;
+    align-items: center;
+  }
 
   section.capabilities div.capabilities__inner {
     flex-direction: column;
@@ -1105,6 +1109,10 @@ div.swipe-3 {
   }
   section.clients div.clients__right__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  footer {
+    position: relative;
   }
 }
 section.case-hero {
@@ -1353,6 +1361,12 @@ main {
   z-index: 1;
   background-color: white;
   margin-bottom: 66.666vh;
+}
+
+@media only screen and (max-width: 540px) {
+  main {
+    margin-bottom: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
