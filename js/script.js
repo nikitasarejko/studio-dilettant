@@ -637,6 +637,7 @@ barba.hooks.before(() => {
 
 barba.hooks.after(() => {
   document.querySelector("html").classList.remove("is-transitioning");
+  document.querySelector("body").classList.remove("body-locked");
   window.scrollTo(0, 0);
 });
 

@@ -359,7 +359,7 @@ section.signup {
     &__content {
       position: relative;
       background-color: $grey-regular;
-      padding: clamp(8rem, 25vw, 32rem) 4rem;
+      padding: clamp(8rem, 27.5vh, 32rem) 4rem;
 
       display: flex;
       flex-direction: column;
@@ -501,6 +501,20 @@ div.swipe {
   &-3 {
     background-color: $grey-regular;
     z-index: 998;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  section.home-hero {
+    div.home-content {
+      &__copy {
+        max-width: 92.5%;
+      }
+    }
+  }
+
+  footer {
+    height: 75vh;
   }
 }
 

@@ -65,7 +65,7 @@ section.nav {
   div.nav__container {
     width: 100%;
     height: 100%;
-    padding: 8rem;
+    padding: clamp(0.8rem, 3.2vw, 8rem);
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
@@ -87,10 +87,10 @@ section.nav {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-row-gap: 2.4rem;
+      grid-column-gap: 1.6rem;
 
       figure {
         clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-        padding: 0.8rem;
 
         img {
           transition: all 1.25s cubic-bezier(0.23, 1, 0.32, 1);
@@ -138,7 +138,7 @@ section.about {
   div.about__container {
     width: 100%;
     height: 100%;
-    padding: 8rem;
+    padding: clamp(0.8rem, 3.2vw, 8rem);
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
@@ -153,11 +153,24 @@ section.about {
 
       p {
         margin-bottom: 1.6rem;
+
+        span {
+          &.intro-text__large {
+            display: block;
+            margin-bottom: 4rem;
+          }
+
+          &.intro-text__title {
+            display: block;
+            margin-bottom: 0.8rem;
+            margin-top: 1.6rem;
+          }
+        }
       }
     }
 
     div.intro-portrait {
-      width: 50%;
+      width: 75%;
       margin-top: 4rem;
 
       figure {
@@ -172,7 +185,7 @@ section.about {
     }
 
     div.intro-contact {
-      padding-top: 8rem;
+      padding-top: 6.4rem;
 
       &__grid {
         display: grid;
@@ -279,8 +292,6 @@ div.dimmed {
     }
 
     div.about__container {
-      padding: clamp(1.6rem, 1.8vw, 4rem);
-
       div.intro-portrait {
         width: 100%;
         margin-top: 2.4rem;
